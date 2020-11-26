@@ -1,0 +1,109 @@
+{
+    "Align": {
+        "name": "Align",
+        "categories": [
+            "rem-level",
+            "formatting"
+        ],
+        "stars": 42,
+        "installed": true,
+        "thumb": "library/Align.png"
+    },
+    "Arrow Bullets": {
+        "name": "Arrow Bullets",
+        "categories": [
+            "bullet-point",
+            "icons"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Arrow Bullets.png"
+    },
+    "Dark Theme by Eva": {
+        "name": "Dark Theme by Eva",
+        "categories": [
+            "theme",
+            "dark"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Dark Theme by Eva.png"
+    },
+    "Focus Sidebar": {
+        "name": "Focus Sidebar",
+        "categories": [
+            "sidebar"
+        ],
+        "stars": 42,
+        "installed": true,
+        "thumb": "library/Focus Sidebar.png"
+    },
+    "Larger Latex": {
+        "name": "Larger Latex",
+        "categories": [
+            "latex",
+            "font"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Larger Latex.png"
+    },
+    "Light Theme by Eva": {
+        "name": "Light Theme by Eva",
+        "categories": [
+            "theme",
+            "light"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Light Theme by Eva.png"
+    },
+    "Math Arrows": {
+        "name": "Math Arrows",
+        "categories": [
+            "math",
+            "bullet-point"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Math Arrows.png"
+    },
+    "Rating": {
+        "name": "Rating",
+        "categories": [
+            "widget"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Rating.png"
+    },
+    "Sidebar Icons": {
+        "name": "Sidebar Icons",
+        "categories": [
+            "icons",
+            "sidebar"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Sidebar Icons.png"
+    },
+    "Title Font": {
+        "name": "Title Font",
+        "categories": [
+            "font"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/Title Font.png"
+    },
+    "tskn' Theme by Eva": {
+        "name": "tskn' Theme by Eva",
+        "categories": [
+            "theme",
+            "light"
+        ],
+        "stars": 42,
+        "installed": false,
+        "thumb": "library/tskn' Theme by Eva.png"
+    }
+}

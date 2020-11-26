@@ -1,0 +1,57 @@
+.spacedRepetition .queue__response-button--big[data-tip*="(1/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(2/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(3/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(4/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(1/4)"]:after {
+  content: ":skull_crossbones:";
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(2/4)"]:after {
+  content: ":jigsaw:";
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(3/4)"]:after {
+  content: ":brain:";
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(4/4)"]:after {
+  content: ":nerd:";
+}
+
+.tooltip {
+  display: none;
+}
+
+.spacedRepetition .queue__response-button--big {
+  position: relative;
+}
+
+.spacedRepetition .queue__response-button--big:hover:before {
+  display: block;
+  position: absolute;
+  bottom: calc(100% - 8px);
+  border: 1px solid black;
+  border-radius: 2px;
+  color: black;
+  background-color: lightgrey;
+  font-size: 15px;
+  padding: 3px;
+}
+
+.spacedRepetition .queue__response-button--big[data-tip*="(1/4)"]:hover:before {
+  content: "Hallo";
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(2/4)"]:hover:before {
+  content: "Daniel";
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(3/4)"]:hover:before {
+  content: "wie";
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(4/4)"]:hover:before {
+  content: "geht's?"
+}
