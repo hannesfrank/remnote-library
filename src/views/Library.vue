@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Search from "./Search.vue";
-import PackageViewer from "./PackageViewer.vue";
+import Search from "../components/Search.vue";
+import PackageViewer from "./../components/PackageViewer.vue";
 import themes from "./../data.json";
 
 export default {
