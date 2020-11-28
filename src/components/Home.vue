@@ -11,8 +11,7 @@
     />
   </div>
 </template>
-$$x^2$$
-$${x, y)^{} x{x, y}^{}$$
+
 <script>
 import Card from "./Card.vue";
 
