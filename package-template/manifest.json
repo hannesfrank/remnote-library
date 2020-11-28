@@ -1,0 +1,17 @@
+{
+    "name": "Pills",
+    "id": "io.github.hannesfrank.remnote-library.pills",
+    "install": [
+        {
+            "method": "copy",
+        },{
+            "method": "api",
+        },{
+            "method": "link",
+        },{
+            "method": "text-expander.espanso",
+        }
+    ],
+    "dependencies"
+    "conflicts"
+    "remnoteVersion"
