@@ -1,75 +1,47 @@
 <template>
+  <header>
+    <h1>RemNote Library</h1>
+    <menu>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/library">Library</a></li>
+        <li><a href="/package-guide">Package Guide</a></li>
+      </ul>
+    </menu>
   <div id="app">
-    <Search v-model="query" />
-    <Library :themes="filteredThemes" />
+    {VueComponent}
   </div>
 </template>
 
 <script>
-import Search from "./components/Search.vue";
-import Library from "./components/Library.vue";
-import themes from "./data.json";
+import Home from './components/Home.vue';
+import Library from './components/Library.vue';
+import PackageGuide from './components/PackageGuide.vue';
+
+const routes = {
+  '/': Home,
+  '/library': Library,
+  '/package-guide': PackageGuide,
+}
 
 export default {
   name: "App",
   components: {
-    Search,
+    Home,
     Library,
-  },
-  data() {
-    return {
-      publicPath: process.env.BASE_URL,
-      themes: Object.values(themes),
-      query: "",
-    };
-  },
-  methods: {
-    matchesQuery: function (query, theme) {
-      const parts = query.split(" ");
-      for (let part of parts) {
-        if (!part) continue;
-        part = part.toLowerCase();
-        let foundPart = false;
-
-        if (part.startsWith("#")) {
-          const category = part.slice(1);
-          for (const themeCategory of theme.categories) {
-            foundPart ||= themeCategory.startsWith(category);
-          }
-        } else {
-          console.log(theme.name, part);
-          foundPart ||= theme.name.toLowerCase().includes(part);
-        }
-        if (!foundPart) {
-          return false;
-        }
-      }
-      console.log(theme.name, "XXXXX");
-      return true;
-    },
+    PackageGuide
   },
   computed: {
-    filteredThemes: function () {
-      return this.themes.filter((theme) =>
-        this.matchesQuery(this.query, theme)
-      );
-    },
-    allCategories: function () {
-      const all = new Set();
-      for (const theme of this.themes) {
-        for (const category of theme.categories) {
-          all.add(category);
-        }
-      }
-      return [...all];
-    },
-  },
+    ViewComponent () {
+      return routes[this.currentRoute] || 'not found';
+    }
+  }
 };
 </script>
 
 <style>
 :root {
-  --width: 750px;
+  --width: 1200px;
 }
 html {
   overflow-y: hidden !important;
@@ -85,7 +57,5 @@ body {
   background-color: lightgray;
   color: #2c3e50;
   margin: 0px;
-  width: var(--width);
-  height: 500px;
 }
 </style>
