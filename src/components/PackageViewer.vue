@@ -30,16 +30,12 @@ export default {
 
 <style scoped>
 .package-viewer {
-
   margin: 0 auto;
   padding: 10px 10px;
   width: 100%;
-  height: 100%;
-  background-color: white;
 
   display: flex;
   flex-flow: row wrap;
-  overflow-y: scroll;
   align-content: flex-start;
 }
 

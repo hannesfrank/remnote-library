@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import PackageGuide from "../views/PackageGuide.vue";
+import ScrollGuide from "../views/ScrollGuide.vue";
 
 Vue.use(VueRouter);
 
@@ -21,9 +21,9 @@ const routes = [
       import(/* webpackChunkName: "library" */ "../views/Library.vue"),
   },
   {
-    path: "/package-guide",
-    name: "PackageGuide",
-    component: PackageGuide,
+    path: "/scroll-guide",
+    name: "ScrollGuide",
+    component: ScrollGuide,
   },
 ];
 

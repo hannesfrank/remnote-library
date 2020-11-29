@@ -3,7 +3,6 @@
     <div class="search-bar">
       <Search v-model="query" />
       <div class="filter">
-        flex
       </div>
     </div>
     <PackageViewer :themes="filteredThemes" />
@@ -73,6 +72,5 @@ export default {
 <style>
 .search-bar {
   background-color: rgb(34, 39, 68);
-  box-shadow: 0px 1px 4px 2px black;
 }
 </style>

@@ -3,7 +3,7 @@
       <input
         class="input"
         type="text"
-        placeholder="Filter templates..."
+        placeholder="Filter scrolls..."
         v-bind:value="value"
         v-on:input="$emit('input', $event.target.value)"
       />
