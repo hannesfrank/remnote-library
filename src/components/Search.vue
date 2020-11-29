@@ -23,8 +23,7 @@ export default {
 
 <style>
 #search.field {
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 0;
-  width: 750px;
 }
 </style>

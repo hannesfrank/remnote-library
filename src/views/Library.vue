@@ -71,6 +71,6 @@ export default {
 
 <style>
 .search-bar {
-  background-color: rgb(34, 39, 68);
+  border-bottom: 1px solid black;
 }
 </style>

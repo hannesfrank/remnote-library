@@ -1,5 +1,5 @@
 <template>
-  <div class="template card">
+  <div class="scroll card">
     <div class="card-header">
       <div class="card-header-title">{{ title }}</div>
       <a href="#" class="card-header-icon" aria-label="more options">
@@ -114,22 +114,26 @@ export default {
 </script>
 
 <style>
-.template.card {
+.scroll {
   position: relative;
   width: 350px;
   height: fit-content;
   margin-bottom: 10px;
-  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.39);
   border-radius: 3px;
 }
 
-.template .card-image img {
+.scroll:hover {
+  box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.39);
+}
+
+.scroll .card-image img {
   object-fit: cover;
   width: 350px;
   height: 150px;
 }
 
-.template .card-header {
+.scroll .card-header {
   background-color: #d2d0d0;
   height: 35px;
 }
@@ -139,7 +143,7 @@ export default {
   margin-right: 3px;
 }
 
-.template .card-footer {
+.scroll .card-footer {
   background-color: #f2f0f0;
   height: 30px;
   width: 100%;

@@ -37,9 +37,10 @@ export default {
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
+  justify-content: center;
 }
 
 .package-viewer .card {
-  margin: 5px;
+  margin: 10px;
 }
 </style>

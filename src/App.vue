@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <header>
+    <header class="has-text-centered">
       <h1>
         <img class="logo" src="./assets/scroll.svg" alt="scroll icon" />
         <strong>Rem</strong>Note <em>Library</em>
       </h1>
-      <div id="nav">
+      <div id="nav" class="is-size-1">
         <router-link to="/">Home</router-link> |
         <router-link to="/library">Library</router-link> |
-        <router-link to="/publish-guide">Publish Guide</router-link>
+        <router-link to="/scroll-guide">Scroll Guide</router-link>
       </div>
     </header>
     <div id="content">
       <router-view />
     </div>
-    <footer>
+    <footer class="p-2 has-text-centered">
       <div>Made with ❤ by Hannes Frank.</div>
       <div class="flaticons-attribution">
         Icons made by
@@ -57,7 +57,6 @@ body {
 
 header {
   width: 100%;
-  padding: 0px 30px;
   background-color: tan;
   border-bottom: 1px solid black;
 }
@@ -70,12 +69,6 @@ header img {
 
 header h1 {
   font-size: 128px;
-}
-
-
-#nav {
-  font-size: 48px;
-  padding: 0px 30px;
 }
 
 #nav a {
@@ -94,10 +87,8 @@ header h1 {
 
 footer {
   width: 100%;
-  text-align: center;
   background-color: tan;
   border-top: 1px solid black;
-  padding: 5px;
 }
 
 footer .flaticons-attribution {
