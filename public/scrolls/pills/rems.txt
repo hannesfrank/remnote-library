@@ -1,0 +1,13 @@
+-
+- # Pills
+    - id: com.github...
+    - ## Code
+        - Paste the code here
+    - ## Tags
+        - layout pills
+    - ## Demo 
+        - Skills #[[layout pills]]
+            - HTML
+            - CSS
+            - JavaScript
+            - RemNote

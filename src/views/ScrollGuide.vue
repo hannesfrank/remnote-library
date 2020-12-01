@@ -16,7 +16,7 @@
         <li>Copy the Scroll template</li>
         <li>Add your "magic", e.g. a some awesome CSS</li>
         <li>Describe it in <code>manifest.json</code> and</li>
-        <li>Make a Pull Request on Github.</li>
+        <li>Make a Pull Request on Github. If you plan to update it, add it as a submodule just referencing your own repo.</li>
       </ol>
     </p>
     <p>Later we'll add a backend with a database and a UI to publish scrolls.</p>

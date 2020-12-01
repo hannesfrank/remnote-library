@@ -1,23 +1,56 @@
 {
   "type": "object",
   "properties": {
-    "name": { "type": "string", "description": "The display name/title of this package." },
-    "description": { "type": "string", "description": "Short summary of what the package does." },
-    "author": { "type": "string" },
-    "id": {"type": "string"},
-    "install": { "type": "array", "minItems": 1, "items": {
-      "type": "object",
-      "properties": {
-        "method": {
-          "type": "string",
-          "enum": ["copy", "api", "link", "text-expander.espanso"],
-        }
-      },
-      "required": ["method"]
-    } },
-    "remnoteVersion": { "type": "string" },
-    "dependencies": { "type": "array" },
-    "conflicts": { "type": "array" }
+    "name": {
+      "type": "string",
+      "description": "The display name/title of this scroll."
+    },
+    "description": {
+      "type": "string",
+      "description": "Short summary of what the scroll does."
+    },
+    "author": {
+      "type": "string",
+      "description": "Some information showing where this scroll came from.\nIn the easiest case this is a 'Your Name <mail@example.com>' string."
+    },
+    "homepage": {
+      "type": "string",
+      "description": "Website where more infos can be found. For scrolls in the library repo this can be left blank.",
+      "format": "uri"
+    },
+    "id": {
+      "type": "string",
+      "description": "A unique identifier for the package. E.g. com.github.yourname.package-name or use another domain you own.",
+      "$comment": "For now all packages are inside the scroll directory, so one could use the directory name. Maybe later there are user accounts and we can use username.scrollname"
+    },
+    "shelf": {
+      "type": "string",
+      "description": "The kind of scroll this is. See the enum values (like Custom CSS, User Script, ...). Different kinds of scrolls go on different shelves.",
+      "enum": ["Custom CSS", "Stylus CSS", "User Script", "Browser Extension", "Template"]
+    },
+    "categories": {
+      "type": "string",
+      "enum": ["rem", "formatting", "layout", "theme", "page template"]
+    },
+    "install": {
+      "type": "array",
+      "description": "One or more methods to install the scroll.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string",
+            "enum": ["copy", "api", "link", "download.autokey"]
+          }
+        },
+        "required": ["method"]
+      }
+    },
+    "remnoteVersion": {
+      "type": "string",
+      "description": "RemNote version this scroll is at least compatible with. Currently RemNote has no version number."
+    }
   },
-  "required": ["name", "id", "install"] 
+  "required": ["name", "id", "author", "install"]
 }

@@ -1,0 +1,14 @@
+{
+  "name": "Pills",
+  "id": "com.github.hannesfrank.remnote-library.pills",
+  "description": "Display children round buttons in a line.",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "shelf": "Custom CSS",
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ],
+  "categories": ["layout"]
+}

@@ -11,7 +11,7 @@
         <router-link to="/scroll-guide">Scroll Guide</router-link>
       </div>
     </header>
-    <div id="content">
+    <div id="main">
       <router-view />
     </div>
     <footer class="p-2 has-text-centered">
@@ -80,7 +80,7 @@ header h1 {
   color: #42b983;
 }
 
-#content {
+#main {
   margin-bottom: 0;
   flex: 1 0 auto;
 }

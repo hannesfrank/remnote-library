@@ -1,17 +1,10 @@
 {
-    "name": "Pills",
-    "id": "io.github.hannesfrank.remnote-library.pills",
-    "install": [
-        {
-            "method": "copy",
-        },{
-            "method": "api",
-        },{
-            "method": "link",
-        },{
-            "method": "text-expander.espanso",
-        }
-    ],
-    "dependencies"
-    "conflicts"
-    "remnoteVersion"
+  "name": "Pills",
+  "id": "com.github.hannesfrank.remnote-library.pills",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "install": [
+    {
+      "method": "copy"
+    }
+  ]
+}
