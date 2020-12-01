@@ -1,7 +1,7 @@
 <template>
-  <div class="package-viewer">
-    <PackageCard
-      v-for="theme in themes"
+  <div class="scroll-viewer">
+    <ScrollCard
+      v-for="theme in scrolls"
       v-bind:key="theme.name"
       v-bind:title="theme.name"
       v-bind:stars="theme.stars"
@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import PackageCard from "./PackageCard.vue";
+import ScrollCard from "./ScrollCard.vue";
 
 export default {
   components: {
-    PackageCard,
+    ScrollCard,
   },
-  props: ["themes"],
+  props: ["scrolls"],
   data() {
     return {
       publicPath: process.env.BASE_URL,
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.package-viewer {
+.scroll-viewer {
   margin: 0 auto;
   padding: 10px 10px;
   width: 100%;
@@ -40,7 +40,7 @@ export default {
   justify-content: center;
 }
 
-.package-viewer .card {
+.scroll-viewer .card {
   margin: 10px;
 }
 </style>

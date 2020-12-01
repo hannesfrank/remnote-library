@@ -5,24 +5,24 @@
       <div class="filter">
       </div>
     </div>
-    <PackageViewer :themes="filteredThemes" />
+    <ScrollViewer :scrolls="filteredThemes" />
   </div>
 </template>
 
 <script>
 import Search from "../components/Search.vue";
-import PackageViewer from "./../components/PackageViewer.vue";
-import themes from "./../data.json";
+import ScrollViewer from "./../components/ScrollViewer.vue";
+import scrolls from "./../data.json";
 
 export default {
   components: {
     Search,
-    PackageViewer,
+    ScrollViewer,
   },
   data() {
     return {
       publicPath: process.env.BASE_URL,
-      themes: Object.values(themes),
+      scrolls: Object.values(scrolls),
       query: "",
     };
   },
@@ -52,13 +52,13 @@ export default {
   },
   computed: {
     filteredThemes: function () {
-      return this.themes.filter((theme) =>
+      return this.scrolls.filter((theme) =>
         this.matchesQuery(this.query, theme)
       );
     },
     allCategories: function () {
       const all = new Set();
-      for (const theme of this.themes) {
+      for (const theme of this.scrolls) {
         for (const category of theme.categories) {
           all.add(category);
         }

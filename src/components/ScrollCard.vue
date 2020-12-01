@@ -55,54 +55,7 @@ export default {
       console.log(this.title);
       if (this.title == "Rating") {
         navigator.clipboard
-          .writeText(`.rem[data-rem-tags~=one] .rem-text:before{
-          content: '❤🤍🤍🤍🤍';
-	
-	background: #eee;
-	padding: 4px;
-	margin-bottom: 5px;
-	border: 1px solid #333;
-	display: inline-block;
-}
-
-.rem[data-rem-tags~=two] .rem-text:before{
-  content: '❤❤❤🤍🤍';
-	
-	background: #eee;
-	padding: 4px;
-	margin-bottom: 5px;
-	border: 1px solid #333;
-	display: inline-block;
-}
-
-.rem[data-rem-tags~=three] .rem-text:before{
-  content: '❤❤❤🤍🤍';
-	background: #eee;
-	padding: 4px;
-	margin-bottom: 5px;
-	border: 1px solid #333;
-	display: inline-block;
-}
-
-
-.rem[data-rem-tags~=four] .rem-text:before{
-  content: '❤❤❤❤🤍';
-	background: #eee;
-	padding: 4px;
-	margin-bottom: 5px;
-	border: 1px solid #333;
-	display: inline-block;
-}
-
-
-.rem[data-rem-tags~=five] .rem-text:before{
-  content: '❤❤❤❤❤';
-	background: #eee;
-	padding: 4px;
-	margin-bottom: 5px;
-	border: 1px solid #333;
-	display: inline-block;
-}`);
+          .writeText(``);
       } else {
         navigator.clipboard.writeText(`.document-title {
 	font-family: "Forte";
