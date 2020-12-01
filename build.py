@@ -43,12 +43,18 @@ def build_scroll_data(scroll_manifests):
         except KeyError as e:
             homepage = f"https://github.com/hannesfrank/remnote-library/tree/master/public/{scroll_folder.relative_to(public)}"
 
-        data[scroll_id] = scroll_data
-        data[scroll_id]["homepage"] = homepage
-        data[scroll_id]["thumb"] = thumb_path.relative_to(public).as_posix()
-        data[scroll_id]["rating"] = 5
-        data[scroll_id]["rating_count"] = 42
-        data[scroll_id]["install_count"] = 1337
+        scroll_data["homepage"] = homepage
+        scroll_data["thumb"] = thumb_path.relative_to(public).as_posix()
+        # TODO: These are handled by the backend later:
+        scroll_data["rating"] = 5
+        scroll_data["rating_count"] = 42
+        scroll_data["install_count"] = 1337
+
+        shelf = scroll_data["shelf"]
+        if shelf not in handle_shelf:
+            raise NotImplementedError(f"Shelf '{shelf}' does not exist yet!")
+
+        handle_shelf[shelf](scroll_data, scroll_folder)
 
         install_methods = scroll_data["install"]
 
@@ -57,12 +63,50 @@ def build_scroll_data(scroll_manifests):
 
             if method not in handle_install_method:
                 raise NotImplementedError(
-                    f"Install method '{method}' of {scroll_id} not supported"
+                    f"Install method '{method}' of {scroll_id} not supported!"
                 )
 
             handle_install_method[method](install_method, scroll_data, scroll_folder)
+        
+        data[scroll_id] = scroll_data
 
     return data
+
+
+def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
+    """
+    This snippet has to be copy&pasted before the code block is inserted.
+    Since we can not properly paste code blocks yet the copy&paste has to be 2 steps of copy&paste.
+    
+    TODO: Later when we install using the API this block should be generated as a whole automatically. 
+    """
+    # TODO: The leading empty rem is required for the H1 to work.
+    code_template = f"""-
+- # {scroll_data["name"]}
+    - id: {scroll_data["id"]}
+    - ## Code
+        - Make or move a new Custom CSS block here and copy&paste the second part from the library."""
+    tags_template = """
+    - ## Tags
+        - {}"""
+    demo_template = """
+    - ## Demo
+        - {}"""
+
+    if "config" not in scroll_data:
+        scroll_data["custom-css-block"] = code_template
+        return
+    else:
+        config = scroll_data["config"]
+
+    if "tags" in config:
+        code_template += tags_template.format(config)
+
+    if "demo" in config:
+        demo = scroll_folder / config["demo"]
+        code_template += demo_template.format(demo.read_text())
+
+    scroll_data["custom-css-block"] = code_template
 
 
 def handle_copy_install_method(install_data, scroll_data, scroll_folder: Path):
@@ -73,17 +117,13 @@ def handle_copy_install_method(install_data, scroll_data, scroll_folder: Path):
       - file: A file's content given the file path as string
       - content: Direct string content.
     """
-    if "content" in install_data:
-        # scroll_data["copy"] = install_data["content"]
-        pass
-    elif "file" in install_data:
+    if "file" in install_data:
         p = scroll_folder / install_data["file"]
         install_data["content"] = p.read_text()
-        # scroll_data["copy"] = p.read_text()
 
 
 handle_install_method = {"copy": handle_copy_install_method}
-
+handle_shelf = {"Custom CSS": handle_shelf_custom_css}
 
 if __name__ == "__main__":
     data = build_scroll_data(scroll_manifests)

@@ -1,0 +1,18 @@
+{
+  "name": "My Awesome Widget",
+  "id": "com.github.hannesfrank.remnote-library.my-awesome-widget",
+  "description": "Display a rem in a awesome way.",
+  "author": "Your Name <your.name@example.com>",
+  "shelf": "Custom CSS",
+  "config": {
+    "tags": "awesome",
+    "demo": "demo.rems"
+  },
+  "categories": ["layout"],
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ]
+}

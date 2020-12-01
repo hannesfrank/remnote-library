@@ -1,5 +1,13 @@
 # RemNote Library Package Name
 
+## Custom CSS Scroll manifest
+
+- Make a demo file with the markup of some rems demonstrating your change.
+
+Use everything below as a template for the actual content.
+
+<hr>
+
 ![demo](./thumb.png)
 
 The README is the help page of the plugin. Here you can

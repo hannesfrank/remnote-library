@@ -28,6 +28,10 @@
       "description": "The kind of scroll this is. See the enum values (like Custom CSS, User Script, ...). Different kinds of scrolls go on different shelves.",
       "enum": ["Custom CSS", "Stylus CSS", "User Script", "Browser Extension", "Template"]
     },
+    "config": {
+      "type": "object",
+      "description": "Extra data depending on the kind of scroll. Custom CSS for example can declare used tags and some demo rems."
+    },
     "categories": {
       "type": "string",
       "enum": ["rem", "formatting", "layout", "theme", "page template"]
@@ -52,5 +56,5 @@
       "description": "RemNote version this scroll is at least compatible with. Currently RemNote has no version number."
     }
   },
-  "required": ["name", "id", "author", "install"]
+  "required": ["name", "id", "author", "shelf", "install"]
 }
