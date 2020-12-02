@@ -48,6 +48,8 @@ def build_scroll_data(scroll_manifests):
 
         match = author_regex.match(scroll_data["author"])
         scroll_data["author"] = match.groupdict()
+        if "name" in scroll_data["author"]:
+            scroll_data["author"]["name"] = scroll_data["author"]["name"].strip()
 
         # TODO: Check if thumb exists. If not use a default image. One for each shelf (CSS, User Script, Template, ...).
         thumb_name = scroll_data["thumb"] if "thumb" in scroll_data else "thumb.png"

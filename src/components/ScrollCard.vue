@@ -6,13 +6,13 @@
           <span class="name">{{ name }}</span>
           <span class="author">
             <i class="fas fa-user" aria-hidden="true"></i>
-            {{ author.name || author.email || "Anonymous" }}</span
+            {{ authorName }}</span
           >
         </div>
       </div>
       <div class="card-content">
         <figure class="image">
-          <img :src="`${publicPath}${thumb}`" alt="Placeholder image" />
+          <img :src="thumbPath" alt="Placeholder image" />
         </figure>
       </div>
       <div class="card-footer">
@@ -77,56 +77,78 @@
             @click="toggleDetails()"
           ></button>
         </header>
-        <section class="modal-card-body content">
-          <!-- TODO: Insert sidebar here -->
-          <div class="about is-pulled-right">
-            <ul>
-              <li>
-                <i class="fas fa-user" aria-hidden="true"></i>
-                {{ author.name || author.email || "Anonymous" }}
-              </li>
-            </ul>
+        <section class="modal-card-body">
+          <div class="tile is-ancestor is-vertical">
+            <!-- TODO: Insert sidebar here -->
+            <div class="tile is-parent">
+              <div class="description tile is-child content">
+                <p>
+                  {{ description }}
+                </p>
+                <p v-if="previewPath">
+                  <img class="box" :src="previewPath" alt="Scroll preview" />
+                </p>
+              </div>
+              <div class="about is-child">
+                <ul class="is-size-7 box m-0">
+                  <li>
+                    <span class="icon is-small"
+                      ><i class="fas fa-sm fa-user" aria-hidden="true"></i
+                    ></span>
+                    <span>{{ authorName }}</span>
+                  </li>
+                  <li>
+                    <span class="icon is-small"
+                      ><i
+                        class="fas fa-sm fa-external-link-alt"
+                        aria-hidden="true"
+                      ></i
+                    ></span>
+                    <span><a :href="homepage">Homepage</a></span>
+                  </li>
+                  <li>
+                    <span class="icon is-small"
+                      ><i
+                        class="fas fa-sm fa-code-branch"
+                        aria-hidden="true"
+                      ></i
+                    ></span>
+                    <span>{{ version }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tile is-parent">
+              <div class="tile is-child content">
+                <h4>Installation</h4>
+                <article class="message is-info">
+                  <div class="message-header">
+                    <p>Don't worry!</p>
+                  </div>
+                  <div class="message-body">
+                    The install process will not always be that complicated.
+                    <br />
+                    Once the API is extended it will be just a button click to
+                    install, update or remove!
+                  </div>
+                </article>
+                <ol>
+                  <li>
+                    Copy and insert this block into your Custom CSS:
+                    <CopyButton :content="customCSSBlock" />
+                  </li>
+                  <li>
+                    Create a CSS code block under the
+                    <strong>Code</strong> heading.
+                  </li>
+                  <li>
+                    Copy and insert this CSS into the new code block:
+                    <CopyButton :content="install" />
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
-          <!-- <h4>Details</h4>
-          <ul>
-            <li>
-              <strong>Author:</strong>
-              {{ author.name }}
-              <span v-if="author.email"
-                >(<a :key="'mailto:' + author.email">{{ author.email }}</a
-                >)</span
-              >
-            </li>
-            <li><strong>Homepage:</strong> {{ homepage }}</li>
-          </ul> -->
-          <p>
-            {{ description }}
-          </p>
-          <h4>Installation</h4>
-          <article class="message is-info">
-            <div class="message-header">
-              <p>Don't worry!</p>
-            </div>
-            <div class="message-body">
-              The install process will not always be that complicated.
-              <br />
-              Once the API is extended it will be just a button click to
-              install, update or remove!
-            </div>
-          </article>
-          <ol>
-            <li>
-              Copy and insert this block into your Custom CSS:
-              <CopyButton :content="customCSSBlock" />
-            </li>
-            <li>
-              Create a CSS code block under the <strong>Code</strong> heading.
-            </li>
-            <li>
-              Copy and insert this CSS into the new code block:
-              <CopyButton :content="install" />
-            </li>
-          </ol>
         </section>
         <!-- <footer class="modal-card-foot">
           <button class="button is-success">Save changes</button>
@@ -152,7 +174,7 @@ export default {
   data() {
     return {
       publicPath: process.env.BASE_URL,
-      showDetails: true,
+      showDetails: false,
     };
   },
 
@@ -165,8 +187,12 @@ export default {
     // Polymorphy: There could be cards for different kinds of scrolls.
     // Each type having its own attributes.
     // TODO: consider extracting the scrollData in an init method and not make so many computed properties
-    author: function() {
-      return this.scrollData.author;
+    authorName: function() {
+      return (
+        this.scrollData.author.name ||
+        this.scrollData.author.email ||
+        "Anonymous"
+      );
     },
     categories: function() {
       return this.scrollData.categories;
@@ -199,14 +225,27 @@ export default {
     rating: function() {
       return this.scrollData.rating;
     },
-    thumb: function() {
-      return this.scrollData.thumb;
+    thumbPath: function() {
+      return `${this.publicPath}${this.scrollData.thumb}`;
+    },
+    previewPath: function() {
+      return this.scrollData.preview
+        ? `${this.publicPath}${this.scrollData.preview}`
+        : this.thumbPath;
+    },
+    version: function() {
+      return this.scrollData.version || "--";
     },
   },
 };
 </script>
 
 <style lang="scss">
+/* Fix bug in bulma where there is a missing gap */
+.tile.is-parent > .tile.is-child:not(:last-child) {
+  margin-right: 1.5rem !important;
+}
+
 .scroll-card .card {
   position: relative;
   width: 350px;
@@ -343,4 +382,10 @@ export default {
   color: #ffda54;
 }
 */
+
+.scroll-details .about {
+  ul {
+    list-style-type: none;
+  }
+}
 </style>
