@@ -1,0 +1,3 @@
+[submodule "public/scrolls/rem-type-icons"]
+	path = public/scrolls/rem-type-icons
+	url = https://github.com/hannesfrank/remnote-css-rem-types
