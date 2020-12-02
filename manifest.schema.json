@@ -15,7 +15,7 @@
     },
     "homepage": {
       "type": "string",
-      "description": "Website where more infos can be found. For scrolls in the library repo this can be left blank.",
+      "description": "Website where more infos can be found. For scrolls in the library repo this can be left blank. It will link to the scroll folder.",
       "format": "uri"
     },
     "id": {
@@ -36,6 +36,11 @@
       "type": "string",
       "enum": ["rem", "formatting", "layout", "theme", "page template"]
     },
+    "thumb": {
+      "type": "string",
+      "description": "Path to a preview image.",
+      "default": "thumb.png"
+    },
     "install": {
       "type": "array",
       "description": "One or more methods to install the scroll.",
@@ -45,6 +50,7 @@
         "properties": {
           "method": {
             "type": "string",
+            // TODO: Describe copy as separate type
             "enum": ["copy", "api", "link", "download.autokey"]
           }
         },

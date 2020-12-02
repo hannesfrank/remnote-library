@@ -12,11 +12,20 @@ Medium Term:
 """
 
 import json
+import re
 from pathlib import Path
 from glob import glob
 
 public = Path("public")
 scroll_manifests = glob(str(public / "scrolls/*/manifest.json"))
+
+author_regex = re.compile(
+    "^((?P<name>[^@<]+)(\s+|<))?((?P<email>[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>?)?$"
+)
+
+
+def resolve_to_public(path):
+    return path.relative_to(public).as_posix()
 
 
 def build_scroll_data(scroll_manifests):
@@ -37,18 +46,28 @@ def build_scroll_data(scroll_manifests):
         scroll_id = scroll_data["id"]
         scroll_folder = manifest.parent
 
-        thumb_path = scroll_folder / "thumb.png"
-        try:
-            homepage = scroll_data["homepage"]
-        except KeyError as e:
-            homepage = f"https://github.com/hannesfrank/remnote-library/tree/master/public/{scroll_folder.relative_to(public)}"
+        match = author_regex.match(scroll_data["author"])
+        scroll_data["author"] = match.groupdict()
 
-        scroll_data["homepage"] = homepage
-        scroll_data["thumb"] = thumb_path.relative_to(public).as_posix()
+        # TODO: Check if thumb exists. If not use a default image. One for each shelf (CSS, User Script, Template, ...).
+        thumb_name = scroll_data["thumb"] if "thumb" in scroll_data else "thumb.png"
+        thumb_path = scroll_folder / thumb_name
+        scroll_data["thumb"] = resolve_to_public(thumb_path)
+
+        if "preview" in scroll_data:
+            preview_path = scroll_folder / scroll_data["preview"]
+            scroll_data["preview"] = resolve_to_public(preview_path)
+
+        # TODO: Read description from markdown
         # TODO: These are handled by the backend later:
         scroll_data["rating"] = 5
-        scroll_data["rating_count"] = 42
-        scroll_data["install_count"] = 1337
+        scroll_data["ratingCount"] = 42
+        scroll_data["installCount"] = 1337
+
+        if "homepage" not in scroll_data:
+            scroll_data[
+                "homepage"
+            ] = f"https://github.com/hannesfrank/remnote-library/tree/master/public/{resolve_to_public(scroll_folder)}"
 
         shelf = scroll_data["shelf"]
         if shelf not in handle_shelf:
@@ -67,7 +86,7 @@ def build_scroll_data(scroll_manifests):
                 )
 
             handle_install_method[method](install_method, scroll_data, scroll_folder)
-        
+
         data[scroll_id] = scroll_data
 
     return data
@@ -93,11 +112,7 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
     - ## Demo
         - {}"""
 
-    if "config" not in scroll_data:
-        scroll_data["custom-css-block"] = code_template
-        return
-    else:
-        config = scroll_data["config"]
+    config = scroll_data.get("config", {})
 
     if "tags" in config:
         code_template += tags_template.format(config)
@@ -106,7 +121,7 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
         demo = scroll_folder / config["demo"]
         code_template += demo_template.format(demo.read_text())
 
-    scroll_data["custom-css-block"] = code_template
+    scroll_data["customCSSBlock"] = code_template
 
 
 def handle_copy_install_method(install_data, scroll_data, scroll_folder: Path):

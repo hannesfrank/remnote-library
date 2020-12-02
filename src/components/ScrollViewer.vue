@@ -1,13 +1,9 @@
 <template>
   <div class="scroll-viewer">
     <ScrollCard
-      v-for="theme in scrolls"
-      v-bind:key="theme.name"
-      v-bind:title="theme.name"
-      v-bind:stars="theme.stars"
-      v-bind:installed="theme.installed"
-      v-bind:categories="theme.categories"
-      v-bind:thumb="theme.thumb"
+      v-for="scroll in scrolls"
+      :key="scroll.id"
+      :scrollData="scroll"
     />
   </div>
 </template>
@@ -20,11 +16,6 @@ export default {
     ScrollCard,
   },
   props: ["scrolls"],
-  data() {
-    return {
-      publicPath: process.env.BASE_URL,
-    };
-  },
 };
 </script>
 
@@ -40,7 +31,7 @@ export default {
   justify-content: center;
 }
 
-.scroll-viewer .card {
+.scroll-viewer .scroll-card {
   margin: 10px;
 }
 </style>
