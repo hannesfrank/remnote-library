@@ -5,6 +5,16 @@
       "type": "string",
       "description": "The display name/title of this scroll."
     },
+    "id": {
+      "type": "string",
+      "description": "A unique identifier for the package. E.g. com.github.yourname.package-name or use another domain you own.",
+      "$comment": "For now all packages are inside the scroll directory, so one could use the directory name. Maybe later there are user accounts and we can use username.scrollname"
+    },
+    "version": {
+      "type": "string",
+      "description": "A semver version number of the form `major.minor.patch`. Increment this when you update the package.",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
     "description": {
       "type": "string",
       "description": "Short summary of what the scroll does."
@@ -18,15 +28,16 @@
       "description": "Website where more infos can be found. For scrolls in the library repo this can be left blank. It will link to the scroll folder.",
       "format": "uri"
     },
-    "id": {
-      "type": "string",
-      "description": "A unique identifier for the package. E.g. com.github.yourname.package-name or use another domain you own.",
-      "$comment": "For now all packages are inside the scroll directory, so one could use the directory name. Maybe later there are user accounts and we can use username.scrollname"
-    },
     "shelf": {
       "type": "string",
       "description": "The kind of scroll this is. See the enum values (like Custom CSS, User Script, ...). Different kinds of scrolls go on different shelves.",
-      "enum": ["Custom CSS", "Stylus CSS", "User Script", "Browser Extension", "Template"]
+      "enum": [
+        "Custom CSS",
+        "Stylus CSS",
+        "User Script",
+        "Browser Extension",
+        "Template"
+      ]
     },
     "config": {
       "type": "object",

@@ -1,6 +1,7 @@
 {
   "name": "My Awesome Widget",
   "id": "com.github.hannesfrank.remnote-library.my-awesome-widget",
+  "version": "0.0.1",
   "description": "Display a rem in a awesome way.",
   "author": "Your Name <your.name@example.com>",
   "shelf": "Custom CSS",
