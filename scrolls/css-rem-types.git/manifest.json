@@ -1,0 +1,17 @@
+{
+  "name": "Rem Type and Practice Direction",
+  "id": "com.github.hannesfrank.remnote-css-rem-types",
+  "version": "1.0.0",
+  "description": "Add icons for flashcard/rem types and practice directions.",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "homepage": "https://github.com/hannesfrank/remnote-css-rem-types",
+  "shelf": "Custom CSS",
+  "categories": ["icon"],
+  "thumb": "remnote-css-card-rems-social.png",
+  "install": [
+    {
+      "method": "copy",
+      "content": "@import URL(\"https://hannesfrank.github.io/remnote-css-rem-types/everything.css\");"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+/** Rem type
+ * 
+ * NOTE: This competes with the card type icon for a space to place the ::before. 
+ * 
+ * The icons are a bit harder to handle because they need to be displayed as
+ * block, not as inline like in rem-type-simple.
+ */
+
+/** This is required to disable line breaks after the icon on hovering. 
+ *  TODO: I don't think I need this anymore after using the new selectors.
+ *  TODO: Does this break something?
+ */
+/* .rem-container--concept-rem-type > .rem-text > div:first-child :first-child, 
+.rem-container--descriptor-rem-type > .rem-text > div:first-child :first-child,
+.rem-container--question-rem-type > .rem-text > div:first-child :first-child,
+.rem-container--slot-rem-type > .rem-text > div:first-child :first-child {
+  display: inline-block;
+} */
+
+/* .rem-container--concept-rem-type > div > div:first-child::before { */
+.rem-container--concept-rem-type /* hover */
+  > .rem-text
+  > .rich-text-editor
+  > .EditorContainer
+  > div::before,
+.rem-container--concept-rem-type /* normal */
+  > .rem-text
+  > .EditorContainer:before {
+  /* Original size: 15x19 */
+  content: "";
+  background: green;
+  display: inline-block;
+  width: 15px;
+  height: 13px;
+  position: relative;
+  top: 1px;
+  /* left: -1px; */
+  -webkit-mask-image: url("assets/concept.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url("assets/concept.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.rem-container--descriptor-rem-type /* hover */
+  > .rem-text
+  > .rich-text-editor
+  > .EditorContainer
+  > div::before,
+.rem-container--descriptor-rem-type /* normal */
+  > .rem-text
+  > .EditorContainer:before {
+  /* Original size: 20x17 */
+  content: "";
+  background: royalblue;
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  position: relative;
+  top: 1px;
+  left: -1px;
+  -webkit-mask-image: url("assets/descriptor.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url("assets/descriptor.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.rem-container--question-rem-type /* hover */
+  > .rem-text
+  > .rich-text-editor
+  > .EditorContainer
+  > div::before,
+.rem-container--question-rem-type /* normal */
+  > .rem-text
+  > .EditorContainer:before {
+  /* Original size: 24x24 */
+  content: "";
+  background: mediumpurple;
+  display: inline-block;
+  width: 15px;
+  height: 13px;
+  position: relative;
+  top: 1px;
+  left: -2px;
+  -webkit-mask-image: url("assets/question.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url("assets/question.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+.rem-container--slot-rem-type /* hover */
+  > .rem-text
+  > .rich-text-editor
+  > .EditorContainer
+  > div::before,
+.rem-container--slot-rem-type /* normal */
+  > .rem-text
+  > .EditorContainer:before {
+  /* Original size: 24x24 */
+  content: "";
+  background: grey;
+  display: inline-block;
+  width: 15px;
+  height: 13px;
+  overflow: visible;
+  position: relative;
+  top: 1px;
+  left: -2px;
+  -webkit-mask-image: url("assets/slot.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-image: url("assets/slot.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+
+/* no_content-rem-type are code blocks for example. */
+/*.rem-container--no_content-rem-type > div > div:first-child::before {
+	content: "🖹 ";
+	font-weight: bold;
+	color: blue;
+}
+*/
