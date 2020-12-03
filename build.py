@@ -56,6 +56,9 @@ def build_scroll_data(scroll_manifests):
         thumb_path = scroll_folder / thumb_name
         scroll_data["thumb"] = resolve_to_public(thumb_path)
 
+        if "version" not in scroll_data:
+            scroll_data["version"] = "0.0.0"
+
         if "preview" in scroll_data:
             preview_path = scroll_folder / scroll_data["preview"]
             scroll_data["preview"] = resolve_to_public(preview_path)
@@ -105,6 +108,7 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
     code_template = f"""-
 - # {scroll_data["name"]}
     - id: {scroll_data["id"]}
+    - version: {scroll_data["version"]}
     - ## Code
         - Make or move a new Custom CSS block here and copy&paste the second part from the library."""
     tags_template = """
