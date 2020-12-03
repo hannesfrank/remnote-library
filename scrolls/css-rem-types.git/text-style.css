@@ -1,0 +1,19 @@
+/* As we have visual indication through icons, we don't need text styling anymore. */
+.concept_rem_type,
+.question_rem_type {
+  font-weight: initial;
+}
+
+.descriptor_rem_type {
+  font-style: initial;
+}
+
+/* User defined bold formatting has to be reenabled again. */
+.concept_rem_type.bold,
+.question_rem_type.bold {
+  font-weight: bold;
+}
+.descriptor_rem_type.italic,
+.question_rem_type.bold {
+  font-style: italic;
+}
