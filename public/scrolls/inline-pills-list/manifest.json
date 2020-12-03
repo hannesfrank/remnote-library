@@ -1,14 +1,17 @@
 {
-  "name": "Pills",
+  "name": "Inline Pills List",
   "id": "com.github.hannesfrank.remnote-library.pills",
-  "description": "Display children round buttons in a line.",
+  "description": "Display children in round buttons in a line.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
+  "version": "0.1.0",
   "shelf": "Custom CSS",
+  "thumb": "thumb.png",
+  "preview": "preview.gif",
   "config": {
-    "tags": "layout pills",
+    "tags": "list pills",
     "demo": "demo.rems"
   },
-  "categories": ["layout"],
+  "categories": ["layout", "list"],
   "install": [
     {
       "method": "copy",

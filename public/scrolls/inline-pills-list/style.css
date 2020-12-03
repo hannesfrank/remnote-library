@@ -1,0 +1,90 @@
+:root {
+  --pill-background-color: #f6f6fa;
+  --pill-border-color: grey;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container {
+  background-color: var(--pill-background-color, #f6f6fa);
+  border: 1px solid var(--pill-border-color, grey);
+  border-radius: 2000px;
+  margin: 5px;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container
+  .rem-text {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"] > .TreeNode {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container {
+  flex: 1 1 content;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container:not(:hover)
+  .rem-bullet__container {
+  visibility: hidden;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container.selected-rem {
+  background-color: #cce2ff;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container
+  .rem-text {
+  margin: 0;
+  border-radius: 2000px;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container:not(:hover)
+  .hierarchy-editor__tag-bar {
+  display: none;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container
+  .hierarchy-editor__tag-bar {
+  position: absolute;
+  top: -10px;
+  left: calc(100% - 20px);
+  background: white;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container
+  .hierarchy-editor__tag-bar
+  > * {
+  flex: 1 1 content;
+}
+
+.tree-node-container[data-rem-container-tags~="list-pills"]
+  > .TreeNode
+  > .tree-node-container
+  .hierarchy-editor__tag-bar
+  .hierarchy-editor__tag-bar__tag {
+  display: inline-block;
+  margin: 4px;
+}
