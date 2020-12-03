@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: process.env.NODE_ENV === "production" ? "/remnote-library/" : "/",
   devServer: {
     host: "0.0.0.0",
     https: true,

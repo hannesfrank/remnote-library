@@ -28,27 +28,17 @@
           </div>
         </span>
         <span class="stats card-footer-item">
-          <!-- 
-        <span class="icon report-problem">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
-        <span v-if="installed" class="icon has-text-danger installed">
-          <i class="fas fa-minus-circle" aria-hidden="true"></i>
-        </span>
-        <span v-else class="icon not-installed has-text-success">
-          <i class="fas fa-plus-circle" aria-hidden="true"></i>
-        </span>
-        <span @click="copyClip()" class="icon not-installed has-text-success">
-          <i class="fas fa-copy" aria-hidden="true"></i>
-        </span>
-        -->
           <span class="stat">
-            <i class="fas fa-angle-double-down" aria-hidden="true"></i>
-            <span>{{ installCount }}</span>
+            <span class="icon is-small"
+              ><i class="fas fa-angle-double-down" aria-hidden="true"></i
+            ></span>
+            <span class="value">{{ installCount }}</span>
           </span>
           <span class="stat">
-            <i class="fas fa-star" aria-hidden="true"></i>
-            <span>{{ rating }}</span>
+            <span class="icon is-small mr-1"
+              ><i class="fas fa-star fa-sm" aria-hidden="true"></i
+            ></span>
+            <span class="value">{{ rating }}</span>
           </span>
         </span>
       </div>
@@ -59,10 +49,10 @@
       <div class="modal-card">
         <header class="modal-card-head">
           <div class="modal-card-title">
-            <div class="shelf-icon is-size-2 is-pulled-left m-1 mr-4">
-              <i class="fas fa-palette" aria-hidden="true"></i>
+            <div class="shelf-icon icon is-large is-pulled-left m-1 mr-4">
+              <i class="fas fa-palette fa-2x" aria-hidden="true"></i>
             </div>
-            <div class="">
+            <div>
               <p class="title is-4">
                 {{ name }}
               </p>
@@ -86,7 +76,11 @@
                   {{ description }}
                 </p>
                 <p v-if="previewPath">
-                  <img class="box" :src="previewPath" alt="Scroll preview" />
+                  <img
+                    class="preview"
+                    :src="previewPath"
+                    alt="Scroll preview"
+                  />
                 </p>
               </div>
               <div class="about is-child">
@@ -143,7 +137,7 @@
                   </li>
                   <li>
                     Copy and insert this CSS into the new code block:
-                    <CopyButton :content="install" />
+                    <CopyButton :content="installCopy" />
                   </li>
                 </ol>
               </div>
@@ -304,12 +298,15 @@ export default {
     bottom: 0;
 
     .stats {
-      justify-content: flex-end;
       padding: 5px;
 
       .stat {
         white-space: nowrap;
-        margin: 2px 4px;
+        margin: 0 4px;
+
+        span {
+          vertical-align: middle;
+        }
       }
     }
 
@@ -383,9 +380,14 @@ export default {
 }
 */
 
-.scroll-details .about {
-  ul {
-    list-style-type: none;
+.scroll-details {
+  .about {
+    ul {
+      list-style-type: none;
+    }
+  }
+  img.preview {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   }
 }
 </style>

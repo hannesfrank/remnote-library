@@ -28,7 +28,9 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  // TODO: This does not work with gh-pages. Enable this when having a backend configured like this:
+  // https://router.vuejs.org/guide/essentials/history-mode.html
+  // mode: "history",
   base: process.env.BASE_URL,
   routes,
 });
