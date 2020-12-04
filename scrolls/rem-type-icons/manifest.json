@@ -8,6 +8,7 @@
   "shelf": "Custom CSS",
   "categories": ["icon"],
   "thumb": "remnote-css-card-rems-social.png",
+  "preview": "custom_style.png",
   "install": [
     {
       "method": "copy",
