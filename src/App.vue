@@ -1,6 +1,6 @@
 <template>
   <section id="app">
-    <header class="has-text-centered">
+    <header>
       <div class="banner is-centered columns m-0">
         <div class="column is-one-quarter">
           <img src="./assets/library-logo.png" alt="" />
@@ -31,14 +31,21 @@
               alt="RemNote Library: A Package Manager for RemNote."
             />
           </a>
-          <div class="navbar-burger burger" data-target="navbarRemNoteLibrary">
+          <div
+            class="navbar-burger burger"
+            aria-expanded="false"
+            aria-label="menu"
+            :class="{'is-active': burgerToggle}"
+            @click="burgerToggle = !burgerToggle"
+            data-target="navbarRemNoteLibrary"
+          >
             <span></span>
             <span></span>
             <span></span>
           </div>
         </div>
 
-        <div id="navbarRemNoteLibrary" class="navbar-menu">
+        <div id="navbarRemNoteLibrary" class="navbar-menu" :class="{'is-active': burgerToggle}">
           <div class="navbar-start">
             <router-link class="navbar-item" to="/">Home</router-link>
             <router-link class="navbar-item" to="/library">Library</router-link>
@@ -105,7 +112,15 @@
     </footer>
   </section>
 </template>
-
+<script>
+export default {
+  data: function() {
+    return {
+      burgerToggle: false
+    };
+  }
+};
+</script>
 <style>
 :root {
   --background-color: blanchedalmond;
