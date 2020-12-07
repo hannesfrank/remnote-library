@@ -118,17 +118,19 @@
                 <h4>Usage</h4>
               </div> -->
                 <h4>Installation</h4>
-                See <router-link to="/#custom-css-install-guide">Custom CSS Install Guide</router-link>.
+                See
+                <router-link to="/#custom-css-install-guide"
+                  >Custom CSS Install Guide</router-link
+                >.
                 <ol>
                   <li>
                     <CopyButton
-                      :content="customCSSBlock" title="Custom CSS Template"
+                      :content="customCSSBlock"
+                      title="Custom CSS Template"
                     />
                   </li>
                   <li>
-                    <CopyButton
-                      :content="installCopy" title="CSS Code Block"
-                    />
+                    <CopyButton :content="installCopy" title="CSS Code Block" />
                   </li>
                 </ol>
               </div>
@@ -270,6 +272,11 @@ export default {
   }
   .card-content {
     padding: 0;
+
+    figure {
+      margin: 0;
+    }
+
     figure.image {
       width: 350px;
       height: 200px;

@@ -32,8 +32,36 @@
         <router-link to="/about#vision">Vision</router-link>
       </li>
     </ul>
+    <h2>What can I get here?</h2>
+    <div class="is-flex">
+      <scroll-card
+        :scrollData="scrolls['com.github.hannesfrank.remnote-css-rem-types']"
+        class="m-2"
+      />
+      <scroll-card
+        :scrollData="
+          scrolls['com.github.hannesfrank.remnote-library.kanban-board']
+        "
+        class="m-2"
+      />
+    </div>
+    See <router-link to="featured">Featured Scrolls</router-link> or the
+    <router-link to="library">Library</router-link> for all available
+    <em
+      ><img src="../assets/scroll.svg" alt="scroll icon" class="icon" />
+      Scrolls</em
+    >.
 
     <h2 id="custom-css-install-guide">How do I install a Custom CSS Scroll?</h2>
+
+    <iframe
+      width="1120"
+      height="630"
+      src="https://www.youtube.com/embed/4Y5MeO3g5Ik"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
 
     <ol>
       <li>
@@ -80,11 +108,17 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import ScrollCard from "../components/ScrollCard.vue";
+import scrolls from "./../data.json";
 
 export default {
   name: "Home",
-  components: {}
+  data: function() {
+    return {
+      scrolls: scrolls
+    };
+  },
+  components: { ScrollCard }
 };
 </script>
 

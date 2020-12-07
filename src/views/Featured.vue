@@ -15,7 +15,7 @@ import ScrollCard from "../components/ScrollCard.vue";
 import scrolls from "./../data.json";
 
 export default {
-  name: "Home",
+  name: "Featured",
   data: function() {
     return {
       scrolls: scrolls
