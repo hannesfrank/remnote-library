@@ -118,16 +118,16 @@
                 <h4>Usage</h4>
               </div> -->
                 <h4>Installation</h4>
-                See
+                See <router-link to="/#custom-css-install-guide">Custom CSS Install Guide</router-link>.
                 <ol>
                   <li>
-                    Paste into Custom CSS Page:<CopyButton
-                      :content="customCSSBlock"
+                    <CopyButton
+                      :content="customCSSBlock" title="Custom CSS Template"
                     />
                   </li>
                   <li>
-                    Paste into the new Code Block:<CopyButton
-                      :content="installCopy"
+                    <CopyButton
+                      :content="customCSSBlock" title="CSS Code Block"
                     />
                   </li>
                 </ol>

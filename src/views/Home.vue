@@ -33,7 +33,37 @@
       </li>
     </ul>
 
-    <h2>How do I install a Custom CSS Scroll?</h2>
+    <h2 id="custom-css-install-guide">How do I install a Custom CSS Scroll?</h2>
+
+    <ol>
+      <li>
+        Find the
+        <em>
+          <img src="../assets/scroll.svg" alt="scroll icon" class="icon" />
+          Scroll
+        </em>
+        you want to install, click to open it and scroll to
+        <em>Installation</em>.
+      </li>
+      <li>Click the first copy button <em>Custom CSS Template</em>.</li>
+      <li>
+        Go to RemNote and open the Custom CSS page using
+        <kbd>Ctrl</kbd>+<kbd>P</kbd>.
+      </li>
+      <li>
+        Paste the <em>Custom CSS Template</em> with
+        <kbd>Ctrl</kbd>+<kbd>V</kbd>.
+      </li>
+      <li>Click the second copy button <em>CSS Code Block</em>.</li>
+      <li>
+        Under the <strong>Code</strong> heading create a checked todo item and
+        insert a code block.
+      </li>
+      <ul>
+        <li>Make sure the language is set to <em>CSS</em>.</li>
+      </ul>
+      <li>Paste <em>CSS Code Block</em> into the code block.</li>
+    </ol>
 
     <article class="message is-info">
       <div class="message-header">
@@ -74,5 +104,20 @@ img.icon {
   position: relative;
   top: -0.05em;
   vertical-align: middle;
+}
+
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
 }
 </style>
