@@ -1,15 +1,91 @@
 <template>
-  <div id="app">
+  <section id="app">
     <header class="has-text-centered">
-      <h1>
-        <img class="logo" src="./assets/scroll.svg" alt="scroll icon" />
-        <strong>Rem</strong>Note <em>Library</em>
-      </h1>
-      <div id="nav" class="is-size-1">
+      <div class="banner is-centered columns m-0">
+        <div class="column is-one-quarter">
+          <img src="./assets/library-logo.png" alt="" />
+        </div>
+        <div class="has-text-centered">
+          <h1 class="title is-1 mt-4">
+            <strong>Rem</strong>Note <em>Library</em>
+          </h1>
+          <h2 class="subtitle is-4">
+            A package manager for RemNote.
+          </h2>
+        </div>
+      </div>
+
+      <!-- <div id="nav" class="is-size-1">
         <router-link to="/">Home</router-link> |
         <router-link to="/library">Library</router-link> |
         <router-link to="/scroll-guide">Scroll Guide</router-link>
-      </div>
+        <router-link to="featured">Featured Scrolls</router-link>
+        <router-link to="/about">About</router-link>
+      </div> -->
+      <!-- TODO: Edit color scheme and use is-primary or is-light here -->
+      <nav class="navbar is-success">
+        <div class="navbar-brand">
+          <a class="navbar-item px-2 py-0" href="/">
+            <img
+              src="./assets/library-logo.png"
+              alt="RemNote Library: A Package Manager for RemNote."
+            />
+          </a>
+          <div class="navbar-burger burger" data-target="navbarRemNoteLibrary">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="navbarRemNoteLibrary" class="navbar-menu">
+          <div class="navbar-start">
+            <router-link class="navbar-item" to="/">Home</router-link>
+            <router-link class="navbar-item" to="/library">Library</router-link>
+            <router-link class="navbar-item" to="/scroll-guide"
+              >Publish a Scroll</router-link
+            >
+            <router-link class="navbar-item" to="featured"
+              >Featured Scrolls</router-link
+            >
+            <router-link class="navbar-item" to="/about">About</router-link>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <!-- <a
+                    class="bd-tw-button button"
+                    data-social-network="Twitter"
+                    data-social-action="tweet"
+                    data-social-target="https://hannesfrank.github.io/remnote-library/#/"
+                    target="_blank"
+                    href="https://twitter.com/intent/tweet?text=RemNote Library: A package manager for RemNote.&amp;hashtags=remnote&amp;url=https://hannesfrank.github.io/remnote-library/&amp;via=jgthms"
+                  >
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>
+                      Tweet
+                    </span>
+                  </a> -->
+                </p>
+                <p class="control">
+                  <a
+                    class="button is-secondary"
+                    href="https://github.com/hannesfrank/remnote-library"
+                  >
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Github</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
     <div id="main">
       <router-view />
@@ -27,7 +103,7 @@
         >
       </div>
     </footer>
-  </div>
+  </section>
 </template>
 
 <style>
@@ -46,7 +122,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  width: 1200px;
+  max-width: 1200px;
   min-height: 100vh;
   margin: 0px auto;
   background-color: var(--background-color);
@@ -61,23 +137,12 @@ header {
   border-bottom: 1px solid black;
 }
 
-header img {
-  display: inline-block;
-  height: 128px;
-  vertical-align: middle;
-}
-
-header h1 {
-  font-size: 128px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.navbar .navbar-item img {
+  max-height: 2.5rem;
 }
 
 #main {

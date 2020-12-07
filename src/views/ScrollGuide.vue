@@ -25,7 +25,7 @@
 
 <style scoped>
 .scroll-guide {
-  padding: 30px;
+  margin: 30px;
 }
 
 img {

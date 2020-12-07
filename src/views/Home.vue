@@ -1,17 +1,8 @@
 <template>
-  <div class="home">
-    <p>A library is a institution to share the knowledge of humankind.</p>
-    <p>
-      Knowledge of all kinds - facts, procedures and even computer code - have
-      the unique property that it can be shared without additional properties
-      without additional cost. This is magical.
-    </p>
+  <div class="home content">
+    <h2>What is this?</h2>
 
-    <p>
-      This library hosts numerous scroll which aid you on your learning journey.
-      Take a break from watering your tree of knowledge and wander through the
-      halls of this place.
-    </p>
+    <h2>How do I install a Custom CSS Scroll?</h2>
   </div>
 </template>
 
