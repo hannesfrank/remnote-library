@@ -115,31 +115,20 @@
             <div class="tile is-parent">
               <div class="tile is-child content">
                 <h4>Installation</h4>
-                <article class="message is-info">
-                  <div class="message-header">
-                    <p>Don't worry!</p>
-                  </div>
-                  <div class="message-body">
-                    The install process will not always be that complicated.
-                    <br />
-                    Once the API is extended it will be just a button click to
-                    install, update or remove!
-                  </div>
-                </article>
+                See 
                 <ol>
                   <li>
-                    Copy and insert this block into your Custom CSS:
+                    Paste into Custom CSS Page:
                     <CopyButton :content="customCSSBlock" />
                   </li>
                   <li>
-                    Create a CSS code block under the
-                    <strong>Code</strong> heading.
-                  </li>
-                  <li>
-                    Copy and insert this CSS into the new code block:
+                    Paste into the new Code Block:
                     <CopyButton :content="installCopy" />
                   </li>
                 </ol>
+              </div>
+              <div class="tile is-child content">
+                <h4>Usage</h4>
               </div>
             </div>
           </div>
@@ -162,20 +151,20 @@ import CopyButton from "./CopyButton.vue";
 
 export default {
   components: {
-    CopyButton,
+    CopyButton
   },
   props: ["scrollData"],
   data() {
     return {
       publicPath: process.env.BASE_URL,
-      showDetails: false,
+      showDetails: false
     };
   },
 
   methods: {
     toggleDetails: function() {
       this.showDetails = !this.showDetails;
-    },
+    }
   },
   computed: {
     // Polymorphy: There could be cards for different kinds of scrolls.
@@ -229,8 +218,8 @@ export default {
     },
     version: function() {
       return this.scrollData.version || "--";
-    },
-  },
+    }
+  }
 };
 </script>
 

@@ -35,7 +35,7 @@
             class="navbar-burger burger"
             aria-expanded="false"
             aria-label="menu"
-            :class="{'is-active': burgerToggle}"
+            :class="{ 'is-active': burgerToggle }"
             @click="burgerToggle = !burgerToggle"
             data-target="navbarRemNoteLibrary"
           >
@@ -45,14 +45,18 @@
           </div>
         </div>
 
-        <div id="navbarRemNoteLibrary" class="navbar-menu" :class="{'is-active': burgerToggle}">
+        <div
+          id="navbarRemNoteLibrary"
+          class="navbar-menu"
+          :class="{ 'is-active': burgerToggle }"
+        >
           <div class="navbar-start">
             <router-link class="navbar-item" to="/">Home</router-link>
             <router-link class="navbar-item" to="/library">Library</router-link>
             <router-link class="navbar-item" to="/scroll-guide"
               >Publish a Scroll</router-link
             >
-            <router-link class="navbar-item" to="featured"
+            <router-link class="navbar-item" to="/featured"
               >Featured Scrolls</router-link
             >
             <router-link class="navbar-item" to="/about">About</router-link>
@@ -85,7 +89,7 @@
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Github</span>
+                    <span>GitHub</span>
                   </a>
                 </p>
               </div>

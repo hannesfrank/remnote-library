@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
+import Featured from "../views/Featured.vue";
 import ScrollGuide from "../views/ScrollGuide.vue";
 
 Vue.use(VueRouter);
@@ -16,6 +17,11 @@ const routes = [
     path: "/about",
     name: "About",
     component: About
+  },
+  {
+    path: "/featured",
+    name: "Featured",
+    component: Featured
   },
   {
     path: "/library",
@@ -39,6 +45,13 @@ const router = new VueRouter({
   // mode: "history",
   base: process.env.BASE_URL,
   routes,
+  scrollBehavior: function(to, from, savedPosition) {
+    if (to.hash) {
+      return { selector: to.hash };
+    } else {
+      return { x: 0, y: 0 };
+    }
+  },
   linkActiveClass: "is-active-dropdown",
   linkExactActiveClass: "is-active"
 });

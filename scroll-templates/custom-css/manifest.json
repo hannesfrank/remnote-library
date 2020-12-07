@@ -10,6 +10,8 @@
     "demo": "demo.rems"
   },
   "categories": ["layout"],
+  "thumb": "thumb.png",
+  "preview": "demo.gif",
   "install": [
     {
       "method": "copy",
