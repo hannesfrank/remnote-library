@@ -1,0 +1,87 @@
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode {
+  display: flex;
+  /* auto jumps when toggling/writing rems */ 
+  /* grid-template-columns: auto auto auto; */
+  background-color: lightgrey;
+  border-radius: 3px;
+  padding-left: 0 !important;
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container {
+  /* equal width columns */
+  flex: 1 1 0;
+  /* more based on content */
+  /* flex: 1 1 auto; */
+  background-color: rgb(160, 170, 256);
+  margin: 6px;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container:not(:first-child) {
+  margin-left: 0;
+}
+
+/* bullet point only on hover */
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode .tree-node-container > div:first-child:not(:hover) .rem-bullet__container {
+  visibility: hidden;
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container > div:first-child {
+  background-color: rgba(0, 0, 0, 0.09);
+  margin: 0;
+  border-bottom: 1px solid grey;
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container > .TreeNode {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: unset !important;
+}
+
+/* Task cards */
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container > .TreeNode > .tree-node-container {
+  background-color: white;
+  margin: 5px;
+  border-radius: 2px;
+  box-shadow: 0 0 1px 0;
+}
+
+/* Drag & Drop bullets */
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container > .TreeNode > .tree-node-container > div:first-child .rem-bullet__container .rem-bullet {
+  width: 100%;
+  height: 100%;
+  background-color: lightgrey;
+  border-radius: 0;
+  border: unset;
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container > .TreeNode > .tree-node-container > div:first-child .rem-bullet__container .rem-bullet:before {
+  content: '';
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container > .TreeNode > .tree-node-container > div:first-child .rem-bullet__container {
+  height: 100%;
+  width: 20px;
+  top: 0;
+  left: 0;
+  margin-top: 0 !important;
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container > .TreeNode > .tree-node-container > div:first-child .rem-text {
+  padding-left: 25px;
+  margin-left: 0;
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container:nth-child(1) {
+  background-color: rgb(256, 200, 160);
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container:nth-child(2) {
+  background-color: rgb(256, 256, 190);
+}
+
+.tree-node-container[data-rem-container-tags~=kanban] > .TreeNode > .tree-node-container:nth-child(3) {
+  background-color: rgb(200, 256, 190);
+}

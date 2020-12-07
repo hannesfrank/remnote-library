@@ -127,7 +127,7 @@
                   </li>
                   <li>
                     <CopyButton
-                      :content="customCSSBlock" title="CSS Code Block"
+                      :content="installCopy" title="CSS Code Block"
                     />
                   </li>
                 </ol>
