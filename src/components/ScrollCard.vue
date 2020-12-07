@@ -112,23 +112,25 @@
                 </ul>
               </div>
             </div>
-            <div class="tile is-parent">
+            <div class="tile is-parent is-vertical">
               <div class="tile is-child content">
+                <!-- <div class="tile is-child content">
+                <h4>Usage</h4>
+              </div> -->
                 <h4>Installation</h4>
-                See 
+                See
                 <ol>
                   <li>
-                    Paste into Custom CSS Page:
-                    <CopyButton :content="customCSSBlock" />
+                    Paste into Custom CSS Page:<CopyButton
+                      :content="customCSSBlock"
+                    />
                   </li>
                   <li>
-                    Paste into the new Code Block:
-                    <CopyButton :content="installCopy" />
+                    Paste into the new Code Block:<CopyButton
+                      :content="installCopy"
+                    />
                   </li>
                 </ol>
-              </div>
-              <div class="tile is-child content">
-                <h4>Usage</h4>
               </div>
             </div>
           </div>
