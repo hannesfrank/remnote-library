@@ -12,12 +12,14 @@ Medium Term:
 """
 
 import json
+import glob
 import re
+import textwrap
+
 from pathlib import Path
-from glob import glob
 
 public = Path("public")
-scroll_manifests = glob(str(public / "scrolls/*/manifest.json"))
+scroll_manifests = glob.glob(str(public / "scrolls/*/manifest.json"))
 
 author_regex = re.compile(
     "^((?P<name>[^@<]+)(\s+|<))?((?P<email>[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>?)?$"
@@ -116,16 +118,18 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
         - {}"""
     demo_template = """
     - ## Demo
-        - {}"""
+{}"""
 
     config = scroll_data.get("config", {})
 
     if "tags" in config:
-        code_template += tags_template.format(config)
+        code_template += tags_template.format(config["tags"])
 
     if "demo" in config:
         demo = scroll_folder / config["demo"]
-        code_template += demo_template.format(demo.read_text())
+        demo_rems = demo.read_text()
+        indented_demo_rems = textwrap.indent(demo_rems, " " * 8)
+        code_template += demo_template.format(indented_demo_rems)
 
     scroll_data["customCSSBlock"] = code_template
 
