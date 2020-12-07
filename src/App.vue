@@ -25,12 +25,12 @@
       <!-- TODO: Edit color scheme and use is-primary or is-light here -->
       <nav class="navbar is-success">
         <div class="navbar-brand">
-          <a class="navbar-item px-2 py-0" href="/">
+          <router-link exact-active-class="no-class-for-brand-image" class="navbar-item" to="/">
             <img
               src="./assets/library-logo.png"
               alt="RemNote Library: A Package Manager for RemNote."
             />
-          </a>
+          </router-link>
           <div
             class="navbar-burger burger"
             aria-expanded="false"
