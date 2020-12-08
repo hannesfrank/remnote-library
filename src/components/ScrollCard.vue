@@ -68,79 +68,13 @@
           ></button>
         </header>
         <section class="modal-card-body">
-          <div class="tile is-ancestor is-vertical">
-            <!-- TODO: Insert sidebar here -->
-            <div class="tile is-parent">
-              <div class="description tile is-child content">
-                <p>
-                  {{ description }}
-                </p>
-                <p v-if="previewPath">
-                  <img
-                    class="preview"
-                    :src="previewPath"
-                    alt="Scroll preview"
-                  />
-                </p>
-              </div>
-              <div class="about is-child">
-                <ul class="is-size-7 box m-0">
-                  <li>
-                    <span class="icon is-small"
-                      ><i class="fas fa-sm fa-user" aria-hidden="true"></i
-                    ></span>
-                    <span>{{ authorName }}</span>
-                  </li>
-                  <li>
-                    <span class="icon is-small"
-                      ><i
-                        class="fas fa-sm fa-external-link-alt"
-                        aria-hidden="true"
-                      ></i
-                    ></span>
-                    <span><a :href="homepage">Homepage</a></span>
-                  </li>
-                  <li>
-                    <span class="icon is-small"
-                      ><i
-                        class="fas fa-sm fa-code-branch"
-                        aria-hidden="true"
-                      ></i
-                    ></span>
-                    <span>{{ version }}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="tile is-parent is-vertical">
-              <div class="tile is-child content">
-                <!-- <div class="tile is-child content">
-                <h4>Usage</h4>
-              </div> -->
-                <h4>Installation</h4>
-                See
-                <router-link to="/#custom-css-install-guide"
-                  >Custom CSS Install Guide</router-link
-                >.
-                <ol>
-                  <li>
-                    <CopyButton
-                      :content="customCSSBlock"
-                      title="Custom CSS Template"
-                    />
-                  </li>
-                  <li>
-                    <CopyButton :content="installCopy" title="CSS Code Block" />
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
+          <ScrollDetails :scrollData="scrollData" />
         </section>
-        <!-- <footer class="modal-card-foot">
-          <button class="button is-success">Save changes</button>
-          <button class="button">Cancel</button>
-        </footer> -->
+        <footer class="modal-card-foot is-justify-content-flex-end">
+          <router-link :to="{ name: 'ScrollDetails', params: { id } }">
+            <button class="button is-primary">Details</button></router-link
+          >
+        </footer>
       </div>
       <!-- <button
         class="modal-close is-large"
@@ -151,11 +85,11 @@
   </div>
 </template>
 <script>
-import CopyButton from "./CopyButton.vue";
+import ScrollDetails from "./ScrollDetails.vue";
 
 export default {
   components: {
-    CopyButton
+    ScrollDetails
   },
   props: ["scrollData"],
   data() {
@@ -308,16 +242,6 @@ export default {
       }
     }
 
-    // .icon {
-    //   background-color: white;
-    //   margin: 2px;
-    //   box-shadow: 0 0 1px darkgrey;
-    //   border-radius: 2px;
-    // }
-    // .icon:hover {
-    //   box-shadow: 0 0 2px black;
-    // }
-
     .categories {
       padding: 5px;
       flex-grow: 4;
@@ -377,15 +301,4 @@ export default {
   color: #ffda54;
 }
 */
-
-.scroll-details {
-  .about {
-    ul {
-      list-style-type: none;
-    }
-  }
-  img.preview {
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  }
-}
 </style>

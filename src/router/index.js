@@ -4,6 +4,9 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Featured from "../views/Featured.vue";
 import ScrollGuide from "../views/ScrollGuide.vue";
+import ScrollDetails from "../views/ScrollDetails.vue";
+
+import scrolls from "../data.json";
 
 Vue.use(VueRouter);
 
@@ -31,6 +34,14 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "library" */ "../views/Library.vue")
+  },
+  {
+    path: "/scroll/:id",
+    name: "ScrollDetails",
+    component: ScrollDetails,
+    props: route =>  ({
+      scrollData: scrolls[route.params.id]
+    })
   },
   {
     path: "/scroll-guide",

@@ -11,7 +11,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.2
         with:
-          version:  15.x
+          node-version: 15.x
       - name: Setup Python 3
         uses: actions/setup-python@v2.1.4
         with:
@@ -23,7 +23,6 @@ jobs:
 
       - name: Clean install dependencies
         run: yarn install
-
       - name: Build
         run: yarn build
 
