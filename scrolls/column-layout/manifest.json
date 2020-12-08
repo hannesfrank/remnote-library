@@ -1,0 +1,21 @@
+{
+  "name": "Column Layout",
+  "id": "com.github.hannesfrank.remnote-library.column-layout",
+  "version": "0.0.1",
+  "description": "Show children of a rem next to each other.",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "shelf": "Custom CSS",
+  "config": {
+    "tags": "columns",
+    "demo": "demo.rems"
+  },
+  "categories": ["layout"],
+  "thumb": "thumb.png",
+  "preview": "demo.gif",
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ]
+}

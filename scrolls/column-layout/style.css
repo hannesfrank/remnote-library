@@ -1,0 +1,12 @@
+.tree-node-container[data-rem-container-tags~="columns"] > .TreeNode {
+  display: flex;
+}
+
+.tree-node-container[data-rem-container-tags~="columns"]
+  > .TreeNode
+  > .tree-node-container {
+  /* equal width columns */
+  flex: 1 1 0;
+  /* more based on content */
+  /* flex: 1 1 auto; */
+}
