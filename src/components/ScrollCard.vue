@@ -226,8 +226,6 @@ export default {
     background-color: #f2f0f0;
     height: 30px;
     width: 100%;
-    position: absolute;
-    bottom: 0;
 
     .stats {
       padding: 5px;
