@@ -1,0 +1,16 @@
+{
+  "name": "Sidebar Icons",
+  "id": "com.github.hannesfrank.remnote-library.sidebar-icons",
+  "version": "0.0.1",
+  "description": "Add unicode icons for documents and folders to the sidebar.",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "shelf": "Custom CSS",
+  "categories": ["sidebar", "icon"],
+  "thumb": "thumb.png",
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ]
+}

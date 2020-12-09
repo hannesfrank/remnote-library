@@ -1,0 +1,37 @@
+.document-list-item__folder-icon-container {
+  position: relative;
+  top: 2px;
+  height: 20px !important;
+  width: 22px !important;
+  margin-right: 4px !important;
+  margin-left: 0 !important;
+  overflow: visible !important;
+}
+
+.document-list-item__folder-icon {
+  transform: none !important;
+}
+.document-list-item__folder-icon img {
+  display: none;
+}
+.document-list-item__folder-icon.document-list-item__folder-icon--opened:before {
+  content: "📂";
+  width: 10px;
+  height: 10px;
+  overflow: visible;
+  /* desaturate with filters */
+  /*filter: grayscale(100%);*/
+}
+
+.document-list-item__folder-icon.document-list-item__folder-icon--closed:before {
+  content: "📁";
+}
+
+#documentList .document-list-item .document-list-item__left-spacer:before {
+  content: "📄";
+}
+
+#documentList .document-list-item .document-list-item__left-spacer {
+  margin-left: 5px;
+  width: 20px !important;
+}

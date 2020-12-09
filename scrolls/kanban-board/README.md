@@ -1,25 +1,19 @@
-# RemNote Library Package Name
+# Kanban Board
 
-## Custom CSS Scroll manifest
+![thumb](./thumb.png)
 
-- Make a demo file with the markup of some rems demonstrating your change.
-
-Use everything below as a template for the actual content.
-
-<hr>
-
-![demo](./thumb.png)
-
-The README is the help page of the plugin. Here you can
-
-- document usage instructions
-- show a larger demo
-- have a changelog
+![demo](./demo.gif)
 
 ## Usage
 
-If it is not obvious, document how to use here:
+- Use the tag `#kanban` to create a board.
+- Since boards and cards are just rem they still behave like they would do without the style:
+  - Move cards and boards with <kbd>Alt</kbd> + <kbd>Up</kbd>/<kbd>Down</kbd>
+  - "Indenting" a board turns it into a card.
+  - "Dedenting" a card turns it into a board.
+  - You have to drop cards on the board title or next to another card. Watch out for the drag&drop indicators here.
+  - Moving a card from one board to another does not change it, i.e. it never checks a task off automatically.
 
 ## Changelog
 
-- 0.1.0: First Release!
+- 0.0.1: First Release!
