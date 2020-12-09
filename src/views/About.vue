@@ -71,6 +71,11 @@
     <p>
       Yes, please 🙃
     </p>
+    <h2>Changelog</h2>
+    <h3>2020-12-08</h3>
+    <ul>
+      <li>Feature: Each scroll has its own page now which can be linked to.</li>
+    </ul>
   </div>
 </template>
 
