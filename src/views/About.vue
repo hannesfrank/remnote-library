@@ -6,6 +6,17 @@
       the <a href="https://forum.remnote.io">Forum</a> or
       <a href="https://github.com/hannesfrank/remnote-library">Github</a>.
     </p>
+    <h3>
+      Where can I report problems or make a suggestion for a (Custom CSS)
+      Scroll?
+    </h3>
+    <p>
+      There is a Report link in the metadata section of the Custom CSS Template
+      Block which can be used to quickly create an issue.
+    </p>
+    <p>
+      Otherwise go to the Homepage of the Scroll and report the issue there.
+    </p>
     <h3 id="tag-prefix">
       It is hard to select the correct styling tag or list all styling tags.
     </h3>
@@ -23,8 +34,8 @@
       Descriptors.
     </p>
     <p>
-      You can use any special characters (like <code>_ ! § $ % &amp; /</code>) as they are ignored by
-      the code.
+      You can use any special characters (like <code>_ ! § $ % &amp; /</code>)
+      as they are ignored by the code.
     </p>
     <p>
       Another option is to copy the tag <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
@@ -98,6 +109,13 @@
       Yes, please 🙃
     </p>
     <h2>Changelog</h2>
+    <h3>2020-12-09</h3>
+    <ul>
+      <li>
+        Feature: Custom CSS Metadata blocks now have a report link to quickly
+        create an issue.
+      </li>
+    </ul>
     <h3>2020-12-08</h3>
     <ul>
       <li>Feature: Each scroll has its own page now which can be linked to.</li>

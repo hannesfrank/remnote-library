@@ -15,6 +15,7 @@ import json
 import glob
 import re
 import textwrap
+import urllib
 
 from pathlib import Path
 
@@ -24,6 +25,7 @@ scroll_manifests = glob.glob(str(public / "scrolls/*/manifest.json"))
 author_regex = re.compile(
     "^((?P<name>[^@<]+)(\s+|<))?((?P<email>[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>?)?$"
 )
+repo_regex = re.compile("^(?P<repo>https://github.com/[^/]+/[^/]+).*$")
 
 
 def resolve_to_public(path):
@@ -75,6 +77,9 @@ def build_scroll_data(scroll_manifests):
             scroll_data[
                 "homepage"
             ] = f"https://github.com/hannesfrank/remnote-library/tree/master/public/{resolve_to_public(scroll_folder)}"
+        match = repo_regex.match(scroll_data["homepage"])
+        if match:
+            scroll_data["repo"] = match.groupdict()["repo"]
 
         shelf = scroll_data["shelf"]
         if shelf not in handle_shelf:
@@ -107,10 +112,14 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
     TODO: Later when we install using the API this block should be generated as a whole automatically. 
     """
     # TODO: The leading empty rem is required for the H1 to work.
-    code_template = f"""-
+    template = f"""-
 - # {scroll_data["name"]}
     - id: {scroll_data["id"]}
     - version: {scroll_data["version"]}
+    - [Homepage]({scroll_data["homepage"]})"""
+    report_template = """
+    - [Report Problem or Suggest Improvement]({})"""
+    code_template = """
     - ## Code
         - Make or move a new Custom CSS block here and copy&paste the second part from the library."""
     tags_template = """
@@ -119,19 +128,36 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
     demo_template = """
     - ## Demo
 {}"""
+    if "repo" in scroll_data:
+        report_title = urllib.parse.quote(
+            f"Report: {scroll_data['name']} v{scroll_data['version']}"
+        )
+        report_body = urllib.parse.quote(
+            f"""
+- **Id:** {scroll_data["id"]}
+- **Version:** {scroll_data["version"]}
+- **Type:** Problem/Suggestion (choose one)
+
+Describe the problem you are having with the scroll.
+Make sure to include a screenshot :)
+"""
+        )
+        report_url = f"{scroll_data['repo']}/issues/new?title=Report:{report_title}&body={report_body}"
+        template += report_template.format(report_url)
+
+    template += code_template
 
     config = scroll_data.get("config", {})
-
     if "tags" in config:
-        code_template += tags_template.format(config["tags"])
+        template += tags_template.format(config["tags"])
 
     if "demo" in config:
         demo = scroll_folder / config["demo"]
         demo_rems = demo.read_text()
         indented_demo_rems = textwrap.indent(demo_rems, " " * 8)
-        code_template += demo_template.format(indented_demo_rems)
+        template += demo_template.format(indented_demo_rems)
 
-    scroll_data["customCSSBlock"] = code_template
+    scroll_data["customCSSBlock"] = template
 
 
 def handle_copy_install_method(install_data, scroll_data, scroll_folder: Path):
