@@ -1,25 +1,17 @@
-# RemNote Library Package Name
+# Kanban Board
 
-## Custom CSS Scroll manifest
+![thumb](./thumb.png)
 
-- Make a demo file with the markup of some rems demonstrating your change.
-
-Use everything below as a template for the actual content.
-
-<hr>
-
-![demo](./thumb.png)
-
-The README is the help page of the plugin. Here you can
-
-- document usage instructions
-- show a larger demo
-- have a changelog
+![demo](./demo.gif)
 
 ## Usage
 
-If it is not obvious, document how to use here:
+- Use the tag `#columns` to create a columns.
+- Since columns are just rem they still behave like they would do without the style:
+  - Move columns with <kbd>Alt</kbd> + <kbd>Up</kbd>/<kbd>Down</kbd>
+  - Indenting a column turns it into a child of the previous one.
+  - Dedenting a child of a column turns it into a column itself.
 
 ## Changelog
 
-- 0.1.0: First Release!
+- 0.0.1: First Release!
