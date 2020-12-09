@@ -1,11 +1,37 @@
 <template>
   <div class="about content">
-    <h2>F.A.Q.</h2>
+    <h2>F.A.Q. and Tips</h2>
     <p>
       Ask something on the <a href="https://bit.ly/REMNOTEdiscord">Discord</a>,
       the <a href="https://forum.remnote.io">Forum</a> or
       <a href="https://github.com/hannesfrank/remnote-library">Github</a>.
     </p>
+    <h3 id="tag-prefix">
+      It is hard to select the correct styling tag or list all styling tags.
+    </h3>
+    <figure class="image is-pulled-right mt-0">
+      <img
+        src="../assets/tip-prefix-tags.png"
+        style="width: 175px"
+        alt="Tip prefix tags"
+      />
+    </figure>
+    <p>
+      If you have trouble (comfortably) selecting the correct styling tag using
+      the <kbd>Ctrl</kbd> + <kbd>P</kbd> search box other rem are also shown
+      consider giving your styling tags a prefix similar to Universal
+      Descriptors.
+    </p>
+    <p>
+      You can use any special characters (like <code>_ ! § $ % &amp; /</code>) as they are ignored by
+      the code.
+    </p>
+    <p>
+      Another option is to copy the tag <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+      <kbd>S</kbd> and paste it with a shortcut or trigger sequence using a
+      third-party tool like Autohotkey or Keyboard Maestro.
+    </p>
+
     <h2>Contributing</h2>
     <p>
       You can <router-link to="/scroll-guide">share Scrolls</router-link> or

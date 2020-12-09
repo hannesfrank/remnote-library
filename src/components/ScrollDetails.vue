@@ -43,6 +43,9 @@
         <router-link to="/#custom-css-install-guide"
           >Custom CSS Install Guide</router-link
         >.
+        <!-- TODO: Add search box here to ask for the styling tag prefix if applicable.
+        This means that the meta block has to be compiled here in the frontend instead of in the backend.
+        -->
         <ol>
           <li>
             <CopyButton :content="customCSSBlock" title="Custom CSS Template" />

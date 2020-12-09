@@ -25,7 +25,11 @@
       <!-- TODO: Edit color scheme and use is-primary or is-light here -->
       <nav class="navbar is-success">
         <div class="navbar-brand">
-          <router-link exact-active-class="no-class-for-brand-image" class="navbar-item" to="/">
+          <router-link
+            exact-active-class="no-class-for-brand-image"
+            class="navbar-item"
+            to="/"
+          >
             <img
               src="./assets/library-logo.png"
               alt="RemNote Library: A Package Manager for RemNote."
@@ -103,6 +107,7 @@
     </div>
     <footer class="p-2 has-text-centered">
       <div>Made with ❤ by Hannes Frank.</div>
+      <small>This is a community project and not an official RemNote product.</small>
       <div class="flaticons-attribution">
         Icons made by
         <a href="https://www.flaticon.com/authors/freepik" title="Freepik"
@@ -127,7 +132,7 @@ export default {
 </script>
 <style>
 :root {
-  --background-color: blanchedalmond;
+  --background-color: rgb(234, 232, 232);
 }
 body {
   margin: 0;
@@ -180,5 +185,21 @@ footer .flaticons-attribution {
 }
 footer .flaticons-attribution a {
   color: darkblue;
+}
+
+/* Global styles */
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
 }
 </style>
