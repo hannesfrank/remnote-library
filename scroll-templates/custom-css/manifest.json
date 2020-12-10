@@ -6,7 +6,7 @@
   "author": "Your Name <your.name@example.com>",
   "shelf": "Custom CSS",
   "config": {
-    "tags": "awesome",
+    "tags": ["awesome"],
     "demo": "demo.rems"
   },
   "categories": ["layout"],

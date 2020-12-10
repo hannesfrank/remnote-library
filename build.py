@@ -124,7 +124,7 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
         - Make or move a new Custom CSS block here and copy&paste the second part from the library."""
     tags_template = """
     - ## Tags
-        - {}"""
+{}"""
     demo_template = """
     - ## Demo
 {}"""
@@ -149,7 +149,9 @@ Make sure to include a screenshot :)
 
     config = scroll_data.get("config", {})
     if "tags" in config:
-        template += tags_template.format(config["tags"])
+        tag_rems = "\n".join(f"- {tag}" for tag in config["tags"])
+        indented_tag_rems = textwrap.indent(tag_rems, " " * 8)
+        template += tags_template.format(indented_tag_rems)
 
     if "demo" in config:
         demo = scroll_folder / config["demo"]

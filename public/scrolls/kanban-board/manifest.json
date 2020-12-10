@@ -6,7 +6,7 @@
   "author": "Hannes Frank <frankhannes@gmail.com>",
   "shelf": "Custom CSS",
   "config": {
-    "tags": "kanban",
+    "tags": ["kanban"],
     "demo": "demo.rems"
   },
   "categories": ["kanban"],

@@ -7,7 +7,7 @@
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "config": {
-    "tags": "divider",
+    "tags": ["divider"],
     "demo": "demo.rems"
   },
   "categories": ["misc"],
