@@ -1,0 +1,27 @@
+:root {
+  --divider-style: 1px solid black;
+}
+
+[data-rem-tags~="divider"]:not(:focus-within) {
+  color: transparent;
+  position: relative;
+}
+
+[data-rem-tags~="divider"]:not(:focus-within):not(:hover)
+  .rem-bullet__container {
+  display: none;
+}
+
+[data-rem-tags~="divider"]:not(:focus-within):not(:hover)
+  .hierarchy-editor__tag-bar {
+  display: none;
+}
+
+[data-rem-tags~="divider"]:not(:focus-within):not(:hover):before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  border-bottom: var(--divider-style, 1px solid black);
+}
