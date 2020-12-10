@@ -142,7 +142,7 @@ Describe the problem you are having with the scroll.
 Make sure to include a screenshot :)
 """
         )
-        report_url = f"{scroll_data['repo']}/issues/new?title=Report:{report_title}&body={report_body}"
+        report_url = f"{scroll_data['repo']}/issues/new?title={report_title}&body={report_body}"
         template += report_template.format(report_url)
 
     template += code_template
