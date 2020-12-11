@@ -6,7 +6,7 @@
   "author": "Hannes Frank <frankhannes@gmail.com>",
   "shelf": "Custom CSS",
   "config": {
-    "tags": "columns",
+    "tags": ["columns"],
     "demo": "demo.rems"
   },
   "categories": ["layout"],

@@ -1,0 +1,37 @@
+/* Style taken from Cato Minor: https://medium.com/better-programming/roamext-roam-extended-a-little-piece-of-code-with-mighty-power-a18184c0c5be */
+:root {
+  --quote-background-color: rgb(244, 242, 242);
+  --quote-border-color: rgb(255, 204, 111);
+  --quote-border-width: 5px;
+}
+
+[data-rem-container-tags~="blockquote"] > div:first-child .rem-text > div {
+  background-color: var(--quote-background-color, rgb(244, 242, 242));
+  border-left: var(--quote-border-width) solid
+    var(--quote-border-color, rgb(255, 204, 111));
+  padding: 6px 11px;
+}
+
+[data-rem-container-tags~="blockquotetree"] {
+  background-color: var(--quote-background-color, rgb(244, 242, 242));
+  border-left: var(--quote-border-width) solid
+    var(--quote-border-color, rgb(255, 204, 111));
+  margin-left: calc(-6px - var(--quote-border-width));
+  padding: 3px 6px;
+}
+
+/* Reset background on selection. */
+.selected-rem [data-rem-container-tags~="blockquotetree"],
+.selected-rem
+  [data-rem-container-tags~="blockquote"]
+  > div:first-child
+  .rem-text
+  > div,
+[data-rem-container-tags~="blockquotetree"].selected-rem,
+[data-rem-container-tags~="blockquote"].selected-rem
+  > div:first-child
+  .rem-text
+  > div {
+  /* The default selection color is #cce2ff. I altered it slightly to have blockquotes still visible on selection. */
+  background-color: #dce2ff;
+}
