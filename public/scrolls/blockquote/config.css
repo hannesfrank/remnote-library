@@ -1,0 +1,5 @@
+:root {
+  --quote-background-color: rgb(244, 242, 242);
+  --quote-border-color: rgb(255, 204, 111);
+  --quote-border-width: 5px;
+}
