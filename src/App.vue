@@ -139,6 +139,7 @@ body {
   padding: 0;
   background-color: dimgray;
   margin: 0 auto;
+  min-width: 425px;
 }
 
 #app {

@@ -33,7 +33,7 @@
       </li>
     </ul>
     <h2>What can I get here?</h2>
-    <div class="is-flex">
+    <div class="is-flex is-flex-wrap-wrap">
       <scroll-card
         :scrollData="scrolls['com.github.hannesfrank.remnote-css-rem-types']"
         class="m-2"
@@ -54,14 +54,17 @@
 
     <h2 id="custom-css-install-guide">How do I install a Custom CSS Scroll?</h2>
 
-    <iframe
-      width="1120"
-      height="630"
-      src="https://www.youtube.com/embed/4Y5MeO3g5Ik"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <figure class="image is-16by9">
+      <iframe
+        class="has-ratio"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/4Y5MeO3g5Ik"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </figure>
 
     <ol>
       <li>
