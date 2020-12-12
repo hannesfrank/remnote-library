@@ -1,0 +1,16 @@
+{
+  "name": "Codeblock Line Numbers",
+  "id": "com.github.hannesfrank.remnote-library.codeblock-line-numbers",
+  "description": "Add line numbers to code blocks.",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "version": "0.0.1",
+  "shelf": "Custom CSS",
+  "thumb": "thumb.png",
+  "categories": ["codeblock"],
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ]
+}

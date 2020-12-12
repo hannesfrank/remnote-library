@@ -1,0 +1,5 @@
+:root {
+  --line-number-width: 45px;
+  --line-number-color: black;
+  --line-number-background-color: rgba(0, 0, 0, 0.04);
+}
