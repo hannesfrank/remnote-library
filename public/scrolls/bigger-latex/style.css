@@ -1,0 +1,7 @@
+:root {
+  --latex-font-size: 24px;
+}
+
+.katex-html {
+  font-size: var(--latex-font-size, 24px);
+}
