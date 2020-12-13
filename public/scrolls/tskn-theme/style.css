@@ -1713,11 +1713,10 @@ i.refresh.icon:hover {
 }
 
 .LatexNodeFocused {
-  border: none;
+  border: 1px solid var(--border-c);
   border-radius: 4px;
   color: var(--font-c);
   padding: 0px 2px;
-  background-color: transparent !important;
 }
 
 .LatexNode {
