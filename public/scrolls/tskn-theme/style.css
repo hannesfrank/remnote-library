@@ -1904,35 +1904,36 @@ i.refresh.icon:hover {
   background-color: var(--soft-background-c);
 }
 
-.spacedRepetition
-  .queue__response-button--big[data-tip="I don't know this (press K)"]:after {
+.spacedRepetition .queue__response-button--big[data-tip*="(1/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(2/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(3/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(4/4)"] > img {
+  display: none;
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(1/4)"]:before {
   content: "☹️";
 }
-
-.spacedRepetition
-  .queue__response-button--big[data-tip="I know this! (press L)"]:after {
-  content: "😊";
-}
-
-.spacedRepetition
-  .queue__response-button--big[data-tip="Accidentally pressed 'Show Answer' too early - try again in an hour.(press H)"]:after {
-  content: "😶";
-}
-
-.spacedRepetition
-  .queue__response-button--big[data-tip="Knew it\, but not well. (press ,)"]:after {
+.spacedRepetition .queue__response-button--big[data-tip*="(2/4)"]:before {
   content: "😕";
 }
-
-.spacedRepetition .queue__response-button--big i.icon {
-  display: none;
+.spacedRepetition .queue__response-button--big[data-tip*="(3/4)"]:before {
+  content: "🙂";
+}
+.spacedRepetition .queue__response-button--big[data-tip*="(4/4)"]:before {
+  content: "😊";
 }
 
 #leech-card #leech-card__header i.frown.outline.icon:before {
   display: none;
 }
 
-#leech-card #leech-card__header i.frown.outline.icon:after {
+#leech-card #leech-card__header i.frown.outline.icon:before {
   content: "☹️";
 }
 
@@ -2000,7 +2001,6 @@ i.refresh.icon:hover {
   background-color: var(--hover-blue-c);
   font-weight: 700;
   opacity: 0.65;
-  font-size: 17px;
 }
 
 #milestone h1 {
