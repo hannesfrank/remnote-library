@@ -46,6 +46,19 @@
         <!-- TODO: Add search box here to ask for the styling tag prefix if applicable.
         This means that the meta block has to be compiled here in the frontend instead of in the backend.
         -->
+        warn
+        <article class="message is-danger">
+          <div class="message-header">
+            <p>Be careful when pasting!</p>
+            <button class="delete" aria-label="delete"></button>
+          </div>
+          <div class="message-body">
+            RemNote really gets upset if you paste the
+            <code>CSS Code Block</code> outside a code block. The devs are
+            working on improving the paste syntax.
+          </div>
+        </article>
+
         <ol>
           <li>
             <CopyButton :content="customCSSBlock" title="Custom CSS Template" />
