@@ -7,6 +7,7 @@
   "version": "0.0.1",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
+  "preview": "preview.png",
   "categories": ["theme", "light"],
   "install": [
     {
