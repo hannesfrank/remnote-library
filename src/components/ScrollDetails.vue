@@ -39,18 +39,18 @@
                   <h4>Usage</h4>
                 </div> -->
         <h4>Installation</h4>
-        See
-        <router-link to="/#custom-css-install-guide"
-          >Custom CSS Install Guide</router-link
-        >.
+        <p>
+          See
+          <router-link to="/#custom-css-install-guide"
+            >Custom CSS Install Guide</router-link
+          >.
+        </p>
         <!-- TODO: Add search box here to ask for the styling tag prefix if applicable.
         This means that the meta block has to be compiled here in the frontend instead of in the backend.
         -->
-        warn
-        <article class="message is-danger">
+        <article class="message is-warning">
           <div class="message-header">
-            <p>Be careful when pasting!</p>
-            <button class="delete" aria-label="delete"></button>
+            Be careful when pasting!
           </div>
           <div class="message-body">
             RemNote really gets upset if you paste the
@@ -62,9 +62,13 @@
         <ol>
           <li>
             <CopyButton :content="customCSSBlock" title="Custom CSS Template" />
+            to paste on the Custom CSS page.
           </li>
           <li>
-            <CopyButton :content="installCopy" title="CSS Code Block" />
+            <CopyButton :content="installCopy" title="CSS Code Block" /> to
+            paste
+            <span class="has-background-danger p-1 px-2">in a codeblock</span>
+            on the Custom CSS page.
           </li>
         </ol>
       </div>
