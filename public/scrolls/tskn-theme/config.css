@@ -31,6 +31,7 @@
   /* Quote Background Color */
   --quote-background-c: #ecf3f6;
 
+  /* === Font === */
   /* Chose one of the following fonts */
   /* --font-body: "Open Sans, sans-serif"; */
   /* --font-body: "Courier New, Courier, monospace"; */
@@ -42,7 +43,7 @@
   /* --font-body: "Open Sans, sans-serif"; */
 
   /* Or import a web font, see below for an @import statement. */
-  /* --font-body: "Lato";
+  /* --font-body: "Lato"; */
 }
 /* Import a web font here. */
 /* @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap"); */

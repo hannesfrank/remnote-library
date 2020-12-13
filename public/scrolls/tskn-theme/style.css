@@ -1,5 +1,4 @@
-/* ==UserStyle==
-
+/*
 @name           tsknDesignTheme
 @namespace      https://github.com/ethomasv/
 @version        1.0.3
@@ -8,63 +7,30 @@
 @homepageURL    https://github.com/ethomasv/RemNoteTheme
 @updateURL      https://raw.githubusercontent.com/ethomasv/RemNoteTheme/master/tsknDesignTheme.user.css
 @preprocessor   stylus
+*/
 
-@var       color        highlight-red-c         "Red Highlight"                             #ffc7c7
-@var       color        highlight-orange-c      "Orange Highlight"                          #ffd599
-@var       color        highlight-yellow-c      "Yellow Highlight"                          #fef49d
-@var       color        highlight-green-c       "Green Highlight"                           #d7e985
-@var       color        highlight-purple-c      "Purple Highlight"                          #e4b1eb
-@var       color        highlight-blue-c        "Blue Highlight"                            #afd9fb
-
-@var       checkbox     hide-indented-rems      "Hide Indented Rem Indicator: |"            1
-@var       checkbox     hide-cloze-menu-arrow   "Show Cloze Menu Button while editing"      1
-@var       checkbox     roomy-spacing           "Roomy Spacing"                             1
-@var       checkbox     smaller-headers         "Smaller Headers"                           0
-@var       checkbox     hide-brackets           "Hide [ ]"                           0
-
-@var       color        reference-c             "Linked Rems Color"                         #b979cf
-
-@var       color        quote-background-c      "Quote Background Color"                    #ecf3f6
-
-@advanced  select       font-body               "Font" {
-
-        "Open Sans":  "Open Sans, sans-serif",
-        "Courier": "Courier New, Courier, monospace",
-        "Century Gothic": "Century Gothic, sans-serif",    
-        "Comic Sans Cursive": "Comic Sans MS, Comic Sans, cursive",
-        "Inter": "Inter, sans-serif",
-        "Times New Roman": "Times, Times New Roman, serif",
-        "Arial": "Arial, sans-serif"
-        
-    }
-
-==/UserStyle== */
-
-/* Code nodes should always be monospace. The theme otherwise sets the font of every div */
-#code-node {
-  font-family: monaco, menlo, consolas, courier new;
-}
+/* === Customization === */
 
 :root {
   --main-blue-c: #1d89e4;
   --hover-blue-c: rgb(25, 122, 208);
   --soft-blue-c: #d1e6f7;
-
+  
   --font-c: black;
   --font-background-c: gray;
-
+  
   --border-c: #eee;
-
+  
   --soft-background-c: #f9f9f9;
-
+  
   --bullet-main: #aaa;
   --bullet-doc: #81d5ed;
   --bullet-folder: #7172fc;
   --bullet-concept: #adcb2a;
   --bullet-descriptor: #f9c866;
-
+  
   --focus-font-weight: 500;
-
+  
   /* Highlight Colors */
   --highlight-red-c: #ffc7c7;
   --highlight-orange-c: #ffd599;
@@ -72,12 +38,12 @@
   --highlight-green-c: #d7e985;
   --highlight-purple-c: #e4b1eb;
   --highlight-blue-c: #afd9fb;
-
+  
   /* Linked Rems Color */
   --reference-c: #b979cf;
   /* Quote Background Color */
   --quote-background-c: #ecf3f6;
-
+  
   /* === Font === */
   /* Chose one of the following fonts */
   /* --font-body: "Open Sans, sans-serif"; */
@@ -88,12 +54,21 @@
   /* --font-body: "Times, Times New Roman, serif"; */
   /* --font-body: "Arial, sans-serif"; */
   /* --font-body: "Open Sans, sans-serif"; */
-
+  
   /* Or import a web font, see below for an @import statement. */
   /* --font-body: "Lato"; */
 }
 /* Import a web font here. */
 /* @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap"); */
+
+
+/* === Changes from the original theme. === */
+
+/* Code nodes should always be monospace. The theme otherwise sets the font of every div */
+#code-node {
+  font-family: monaco, menlo, consolas, courier new;
+}
+
 
 /* === Original theme below === */
 
