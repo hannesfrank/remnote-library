@@ -23,7 +23,7 @@ public = Path("public")
 scroll_manifests = glob.glob(str(public / "scrolls/*/manifest.json"))
 
 author_regex = re.compile(
-    "^((?P<name>[^@<]+)(\s+|<))?((?P<email>[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>?)?$"
+    "^((?P<name>[^@<]+)(\s*|<))?((?P<email>[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>?)?$"
 )
 repo_regex = re.compile("^(?P<repo>https://github.com/[^/]+/[^/]+).*$")
 
@@ -142,7 +142,9 @@ Describe the problem you are having with the scroll.
 Make sure to include a screenshot :)
 """
         )
-        report_url = f"{scroll_data['repo']}/issues/new?title={report_title}&body={report_body}"
+        report_url = (
+            f"{scroll_data['repo']}/issues/new?title={report_title}&body={report_body}"
+        )
         template += report_template.format(report_url)
 
     template += code_template
