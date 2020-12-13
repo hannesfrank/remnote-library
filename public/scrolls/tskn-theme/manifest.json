@@ -1,0 +1,17 @@
+{
+  "name": "tskn's Theme",
+  "id": "com.github.hannesfrank.remnote-library.tskn-theme",
+  "description": "Light, modern theme.\nThis is just a copy&paste adaption of the Stylus theme from the original repo.\nSee the Homepage for proper attribution.",
+  "author": "Eva Thomas",
+  "homepage": "https://github.com/ethomasv/RemNoteTheme",
+  "version": "0.0.1",
+  "shelf": "Custom CSS",
+  "thumb": "thumb.png",
+  "categories": ["theme", "light"],
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ]
+}
