@@ -40,6 +40,10 @@
 
 ==/UserStyle== */
 
+/* Code nodes should always be monospace. The theme otherwise sets the font of every div */
+#code-node {
+  font-family: monaco, menlo, consolas, courier new;
+}
 
 :root {
   --main-blue-c: #1d89e4;
