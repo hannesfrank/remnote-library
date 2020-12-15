@@ -130,10 +130,14 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
 {}"""
     if "repo" in scroll_data:
         report_title = urllib.parse.quote(
-            f"Report: {scroll_data['name']} v{scroll_data['version']}"
+            f"RemNote Library Report: {scroll_data['name']} v{scroll_data['version']}"
         )
         report_body = urllib.parse.quote(
             f"""
+**Please check first if there is an update of this scroll available.
+
+---
+
 - **Id:** {scroll_data["id"]}
 - **Version:** {scroll_data["version"]}
 - **Type:** Problem/Suggestion (choose one)
@@ -142,7 +146,9 @@ Describe the problem you are having with the scroll.
 Make sure to include a screenshot :)
 """
         )
-        report_url = f"{scroll_data['repo']}/issues/new?title={report_title}&body={report_body}"
+        report_url = (
+            f"{scroll_data['repo']}/issues/new?title={report_title}&body={report_body}"
+        )
         template += report_template.format(report_url)
 
     template += code_template
