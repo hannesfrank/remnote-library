@@ -1,0 +1,15 @@
+.tree-node-container[data-rem-container-tags~="numbered-list"]
+  > .TreeNode
+  > .tree-node-container {
+  counter-increment: remNumber;
+}
+
+.tree-node-container[data-rem-container-tags~="numbered-list"]
+  > .TreeNode
+  > .tree-node-container:not(:hover)
+  > div:first-child
+  .rem-bullet__container:before {
+  content: counters(remNumber, ".") " ";
+  position: absolute;
+  right: 18px;
+}

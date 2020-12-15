@@ -1,0 +1,20 @@
+{
+  "name": "Numbered List",
+  "id": "com.github.hannesfrank.remnote-library.numbered-list",
+  "description": "A lightweight way to enumberate a list of rem without creating flashcards.\nUse this if you are brainstorming \"X ways to.../Y kinds of...\"",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "version": "0.0.1",
+  "shelf": "Custom CSS",
+  "thumb": "thumb.png",
+  "config": {
+    "tags": ["numbered-list"],
+    "demo": "demo.rems"
+  },
+  "categories": ["list"],
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ]
+}
