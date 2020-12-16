@@ -10,7 +10,6 @@
   },
   "categories": ["zen mode", "funny"],
   "thumb": "thumb.png",
-  "preview": "demo.gif",
   "install": [
     {
       "method": "copy",
