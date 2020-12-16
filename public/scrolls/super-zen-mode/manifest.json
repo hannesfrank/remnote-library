@@ -1,0 +1,19 @@
+{
+  "name": "Super Zen Mode",
+  "id": "com.github.hannesfrank.remnote-library.super-zen-mode",
+  "version": "0.0.1",
+  "description": "Super Zen Mode. Free Writing Extreme: Don't get distracted by all those rem. :) Only show the path of the current rem - nothing more.",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "shelf": "Custom CSS",
+  "config": {
+    "tags": ["super zen"]
+  },
+  "categories": ["zen mode", "funny"],
+  "thumb": "thumb.png",
+  "install": [
+    {
+      "method": "copy",
+      "file": "style.css"
+    }
+  ]
+}
