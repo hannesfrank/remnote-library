@@ -1,0 +1,67 @@
+/* Make two columns, pro left, con right, everything else spanning both. */
+.tree-node-container[data-rem-container-tags~="pro-con-list"] > .TreeNode {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: dense;
+  column-gap: 25px;
+  margin: auto;
+}
+
+.tree-node-container[data-rem-container-tags~="pro-con-list"]
+  > .TreeNode
+  > .tree-node-container {
+  grid-column: 1 / span 2;
+}
+
+.tree-node-container[data-rem-container-tags~="pro-con-list"]
+  > .TreeNode
+  > .tree-node-container[data-rem-container-tags~="pro"] {
+  grid-column: 1;
+}
+
+.tree-node-container[data-rem-container-tags~="pro-con-list"]
+  > .TreeNode
+  > .tree-node-container[data-rem-container-tags~="con"] {
+  grid-column: 2;
+}
+
+/* Make a big bullet point */
+.rem[data-rem-tags~="pro"] .rem-bullet,
+.rem[data-rem-tags~="con"] .rem-bullet,
+.rem[data-rem-tags~="neutral"] .rem-bullet {
+  border-radius: 100%;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.rem[data-rem-tags~="pro"] .rem-bullet {
+  background-color: lightgreen;
+}
+.rem[data-rem-tags~="con"] .rem-bullet {
+  background-color: orangered;
+}
+.rem[data-rem-tags~="neutral"] .rem-bullet {
+  background-color: gold;
+}
+
+.rem[data-rem-tags~="pro"] .rem-bullet:before,
+.rem[data-rem-tags~="con"] .rem-bullet:before,
+.rem[data-rem-tags~="neutral"] .rem-bullet:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rem[data-rem-tags~="pro"] .rem-bullet:before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewbox='0 0 16 16'><line stroke='black' x1='4' y1='8' x2='12' y2='8' stroke-width='2px' stroke-linecap='round'/><line stroke='black' x1='8' y1='4' x2='8' y2='12' stroke-width='2px' stroke-linecap='round'/></svg>");
+}
+.rem[data-rem-tags~="con"] .rem-bullet:before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewbox='0 0 16 16'><line stroke='black' x1='4' y1='8' x2='12' y2='8' stroke-width='2px' stroke-linecap='round'/></svg>");
+}
+.rem[data-rem-tags~="neutral"] .rem-bullet:before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewbox='0 0 16 16'><circle fill='black' cx='8' cy='8' r='3' /></svg>");
+}
