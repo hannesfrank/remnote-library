@@ -1,4 +1,4 @@
-# Kanban Board
+# Column Layout
 
 ![thumb](./thumb.png)
 
