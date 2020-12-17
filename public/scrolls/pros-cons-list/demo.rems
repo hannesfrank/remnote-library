@@ -1,0 +1,8 @@
+- A question you are trying to decide #[[Pro Con List]]
+    - This is neutral, neither Pro nor Con
+    - Pro Argument #Pro
+    - Advantage #Pro
+        - More info nested below
+    - Counter Argument #Con
+    - Disadvantage #Con
+    - Plain rems are also not sorted into columns
