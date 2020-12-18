@@ -134,7 +134,7 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
         )
         report_body = urllib.parse.quote(
             f"""
-**Please check first if there is an update of this scroll available.
+**Please check first if there is an update of this scroll available.**
 
 ---
 
@@ -142,8 +142,11 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
 - **Version:** {scroll_data["version"]}
 - **Type:** Problem/Suggestion (choose one)
 
-Describe the problem you are having with the scroll.
-Make sure to include a screenshot :)
+- [ ] Describe the problem you are having with the scroll or how it should be improved.
+- [ ] _Add_ a short description to the title (don't replace it completely!) so people know what this is about.
+- [ ] Make sure to include a screenshot or image to make your issue easy to understand.
+
+---
 """
         )
         report_url = (
