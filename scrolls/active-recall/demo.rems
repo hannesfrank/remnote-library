@@ -1,0 +1,11 @@
+- Tags
+    - Active Recall
+- The following rem are hidden until you tag them with `#Learned` #[[Active Recall]]
+    - Learned
+        - You should create this rem when you start practicing.
+        - Tag a rem with `#Learned` after you correctly recalled it.
+        - When you are finished just delete this rem and the tag will automatically be removed from all flashcards.
+    - Concept:: definition
+        - descriptor:: value #Learned
+    - This is a {{Cloze}}.
+    - The lines of Multiline, List and Set can be learned as well, but they can not be pasted for the demo here.

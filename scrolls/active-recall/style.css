@@ -1,0 +1,55 @@
+:root {
+  /* See https://developer.mozilla.org/en-US/docs/Web/CSS/filter for filtering description */
+  --hide-answer-filter: contrast(0%) brightness(1.7);
+}
+
+/* === Clozes === */
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container:not(.rem-container--focused):not(:hover):not([data-rem-container-tags~="learned"])
+  > div:first-child
+  .cloze {
+  background-color: white;
+  filter: var(--hide-answer-filter);
+}
+
+/* === Concept, descriptor, Question? Forward only! === */
+
+/* This selector does not work well with image and #code-nodes.
+.rem-container--concept-rem-type:not(.rem-container--focused) .EditorContainer >span:not(.concept_rem_type):not(.separator-symbol) {
+  color: lightgrey;
+  background-color: lightgrey;
+} */
+
+/*  I instead assume that there is a .RichTextViewer after the separator symbol which is the answer.
+*/
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container--forwards-practice-enabled:not([data-rem-container-tags~="learned"])
+  > div:first-child
+  .EditorContainer
+  > span.RichTextViewer,
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container--forwards-practice-enabled:not([data-rem-container-tags~="learned"])
+  > div:first-child
+  .EditorContainer
+  > span.RichTextViewer
+  #code-node {
+  background: white;
+  filter: var(--hide-answer-filter);
+}
+
+/* === Multiline, List, Set === */
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container--forwards-practice-enabled.tree-node-container--multiline-card-type
+  > .TreeNodeListItems
+  > .tree-node-container:not(:focus-within):not(:hover):not([data-rem-container-tags~="learned"]),
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container--forwards-practice-enabled.tree-node-container--list-card-type
+  > .TreeNodeListItems
+  > .tree-node-container:not(:focus-within):not(:hover):not([data-rem-container-tags~="learned"]),
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container--forwards-practice-enabled.tree-node-container--set-card-type
+  > .TreeNodeListItems
+  > .tree-node-container:not(:focus-within):not(:hover):not([data-rem-container-tags~="learned"]) {
+  background: white;
+  filter: var(--hide-answer-filter);
+}
