@@ -38,7 +38,7 @@ See [`manifest.schema.json`](manifest.schema.json) for a description of the requ
 
 **TODO:** Make a proper guide.
 
-#### CSSy
+#### CSS
 
 - Widgets: Change the display of a rem (and its children) with a tag
   - Table, Column layout
@@ -73,6 +73,7 @@ Install methods:
 ## Library Development
 
 Some Scrolls are added as git submodules. This means you have to clone (your fork) with
+
 ```sh
 git clone --recurse-submodules https://github.com/hannesfrank/remnote-library.git
 # Or if you already cloned, update the submodules
@@ -82,26 +83,27 @@ git submodule update --init --recursive
 All development tasks can be found in `package.json:scripts`.
 
 Install dependencies:
+
 ```
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
 
-```
+Live-reload the library:
+
+```sh
 yarn serve
 ```
 
 You might have to go to `https://YOUR_IP:8080` instead of `https://localhost:8080` for the live reload to work.
 
-### Compiles and minifies for production
+Live-reload the scroll database:
 
-```
-yarn build
+```sh
+yarn watch-scrolls
 ```
 
-### Lints and fixes files
+### Release
 
-```
-yarn lint
-```
+There is a Github workflow which automatically builds and deploys the project when commits are added to the master branch.
