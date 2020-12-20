@@ -27,7 +27,7 @@
             >
           </div>
         </span>
-        <span class="stats card-footer-item">
+        <!-- <span class="stats card-footer-item">
           <span class="stat">
             <span class="icon is-small"
               ><i class="fas fa-angle-double-down" aria-hidden="true"></i
@@ -40,7 +40,7 @@
             ></span>
             <span class="value">{{ rating }}</span>
           </span>
-        </span>
+        </span> -->
       </div>
     </div>
     <div class="scroll-details modal" :class="{ 'is-active': showDetails }">
