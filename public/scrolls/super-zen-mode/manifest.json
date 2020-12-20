@@ -8,7 +8,7 @@
   "config": {
     "tags": ["super zen"]
   },
-  "categories": ["zen mode", "funny"],
+  "categories": ["zen-mode", "funny"],
   "thumb": "thumb.png",
   "install": [
     {

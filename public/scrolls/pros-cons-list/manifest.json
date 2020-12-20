@@ -9,7 +9,7 @@
     "tags": ["Pro", "Con", "Neutral", "Pro Con List"],
     "demo": "demo.rems"
   },
-  "categories": ["layout", "bullet style"],
+  "categories": ["layout", "bullet-style"],
   "thumb": "thumb.png",
   "preview": "demo.gif",
   "install": [

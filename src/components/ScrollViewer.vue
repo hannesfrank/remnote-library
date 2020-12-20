@@ -13,9 +13,9 @@ import ScrollCard from "./ScrollCard.vue";
 
 export default {
   components: {
-    ScrollCard,
+    ScrollCard
   },
-  props: ["scrolls"],
+  props: ["scrolls"]
 };
 </script>
 

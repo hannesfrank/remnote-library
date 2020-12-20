@@ -1,9 +1,8 @@
 <template>
   <div id="library">
     <div class="search-bar">
-      <Search v-model="query" />
-      <div class="filter">
-      </div>
+      <Search v-model="query" :categories="allCategories" />
+      <div class="filter"></div>
     </div>
     <ScrollViewer :scrolls="filteredThemes" />
   </div>
@@ -17,17 +16,17 @@ import scrolls from "./../data.json";
 export default {
   components: {
     Search,
-    ScrollViewer,
+    ScrollViewer
   },
   data() {
     return {
       publicPath: process.env.BASE_URL,
       scrolls: Object.values(scrolls),
-      query: "",
+      query: ""
     };
   },
   methods: {
-    matchesQuery: function (query, theme) {
+    matchesQuery: function(query, theme) {
       const parts = query.split(" ");
       for (let part of parts) {
         if (!part) continue;
@@ -40,7 +39,6 @@ export default {
             foundPart ||= themeCategory.startsWith(category);
           }
         } else {
-          console.log(theme.name, part);
           foundPart ||= theme.name.toLowerCase().includes(part);
         }
         if (!foundPart) {
@@ -48,15 +46,13 @@ export default {
         }
       }
       return true;
-    },
+    }
   },
   computed: {
-    filteredThemes: function () {
-      return this.scrolls.filter((theme) =>
-        this.matchesQuery(this.query, theme)
-      );
+    filteredThemes: function() {
+      return this.scrolls.filter(theme => this.matchesQuery(this.query, theme));
     },
-    allCategories: function () {
+    allCategories: function() {
       const all = new Set();
       for (const theme of this.scrolls) {
         for (const category of theme.categories) {
@@ -64,8 +60,8 @@ export default {
         }
       }
       return [...all];
-    },
-  },
+    }
+  }
 };
 </script>
 
