@@ -1,0 +1,7 @@
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container:not(.rem-container--focused):not(:hover):not([data-rem-container-tags~="learned"])
+  > div:first-child
+  .cloze {
+  background-color: white;
+  filter: var(--hide-answer-filter);
+}

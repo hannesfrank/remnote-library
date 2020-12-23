@@ -4,15 +4,18 @@
   "description": "Light, modern theme.\nThis is just a copy&paste adaption of the Stylus theme from the original repo.\nSee the Homepage for proper attribution.",
   "author": "Eva Thomas",
   "homepage": "https://github.com/ethomasv/RemNoteTheme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "preview": "preview.png",
   "categories": ["theme", "light"],
-  "install": [
-    {
-      "method": "copy",
+  "config": {
+    "customization": { "file": "config.css" }
+  },
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }

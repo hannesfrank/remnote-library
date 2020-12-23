@@ -3,17 +3,18 @@
   "id": "com.github.hannesfrank.remnote-library.bigger-latex",
   "description": "Increase LaTeX font size so that small indices are easier to read.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "categories": ["formatting"],
   "config": {
-    "demo": "demo.rems"
+    "demo": "demo.rems",
+    "customization": { "file": "config.css" }
   },
-  "install": [
-    {
-      "method": "copy",
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }
