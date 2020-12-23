@@ -3,18 +3,19 @@
   "id": "com.github.hannesfrank.remnote-library.blockquote",
   "description": "Configurable quote highlight to distinguish your thoughts from someone else's.\nComes in a single and a tree version.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "config": {
     "tags": ["blockquote", "blockquote-tree"],
-    "demo": "demo.rems"
+    "demo": "demo.rems",
+    "customization": { "file": "config.css" }
   },
   "categories": ["formatting", "highlight"],
-  "install": [
-    {
-      "method": "copy",
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }

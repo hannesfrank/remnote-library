@@ -1,7 +1,7 @@
 {
   "name": "Pros and Cons List",
   "id": "com.github.hannesfrank.remnote-library.pros-cons-list",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Bullet style for Pros, Cons and Neutral items which can optionally be sorted into columns.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
   "shelf": "Custom CSS",
@@ -9,13 +9,13 @@
     "tags": ["Pro", "Con", "Neutral", "Pro Con List"],
     "demo": "demo.rems"
   },
-  "categories": ["layout", "bullet style"],
+  "categories": ["layout", "bullet-style"],
   "thumb": "thumb.png",
   "preview": "demo.gif",
-  "install": [
-    {
-      "method": "copy",
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }

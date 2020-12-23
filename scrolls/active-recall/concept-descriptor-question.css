@@ -1,0 +1,24 @@
+/* Forward only! */
+
+/* This selector does not work well with image and #code-nodes.
+.rem-container--concept-rem-type:not(.rem-container--focused) .EditorContainer >span:not(.concept_rem_type):not(.separator-symbol) {
+  color: lightgrey;
+  background-color: lightgrey;
+} */
+
+/*  I instead assume that there is a .RichTextViewer after the separator symbol which is the answer.
+*/
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container--forwards-practice-enabled:not([data-rem-container-tags~="learned"])
+  > div:first-child
+  .EditorContainer
+  > span.RichTextViewer,
+[data-rem-container-tags~="active-recall"]
+  .tree-node-container--forwards-practice-enabled:not([data-rem-container-tags~="learned"])
+  > div:first-child
+  .EditorContainer
+  > span.RichTextViewer
+  #code-node {
+  background: white;
+  filter: var(--hide-answer-filter);
+}

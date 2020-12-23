@@ -1,8 +1,3 @@
-:root {
-  --super-zen-opacity: 0.1;
-  --super-zen-animation-speed: 5s;
-}
-
 [data-document-tags~="super-zen"]
   .tree-node-container:not(:focus-within)
   > div:first-child {

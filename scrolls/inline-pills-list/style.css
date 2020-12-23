@@ -1,8 +1,3 @@
-:root {
-  --pill-background-color: #f6f6fa;
-  --pill-border-color: grey;
-}
-
 .tree-node-container[data-rem-container-tags~="list-pills"]
   > .TreeNode
   > .tree-node-container {

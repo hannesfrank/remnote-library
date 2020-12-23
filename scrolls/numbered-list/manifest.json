@@ -3,7 +3,7 @@
   "id": "com.github.hannesfrank.remnote-library.numbered-list",
   "description": "A lightweight way to enumberate a list of rem without creating flashcards.\nUse this if you are brainstorming \"X ways to.../Y kinds of...\"",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "config": {
@@ -11,10 +11,10 @@
     "demo": "demo.rems"
   },
   "categories": ["list"],
-  "install": [
-    {
-      "method": "copy",
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }

@@ -1,0 +1,9 @@
+@media print {
+  #hierarchy-editor .TreeNode {
+    padding-left: var(--print-indent-width, 0px);
+  }
+  #hierarchy-editor .TreeNode {
+    margin-left: 0px;
+    border-left: none;
+  }
+}

@@ -1,19 +1,22 @@
 {
   "name": "Print Helper",
   "id": "com.github.hannesfrank.remnote-library.print-helper",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Tags to specify page breaks manually and a few rules to clean the document (hide bullets, remove indent).",
   "author": "Hannes Frank <frankhannes@gmail.com>",
   "shelf": "Custom CSS",
   "config": {
-    "tags": ["page break before", "page break after"]
+    "tags": ["page break before", "page break after"],
+    "customization": { "file": "config.css" }
   },
   "categories": ["print", "formatting", "pdf"],
   "thumb": "thumb.png",
-  "install": [
-    {
-      "method": "copy",
-      "file": "style.css"
-    }
-  ]
+  "install": {
+    "method": "copy",
+    "content": [
+      { "description": "Hide Bullet Points", "file": "hide-bullet-points.css" },
+      { "description": "Tweak Indent", "file": "tweak-indent.css" },
+      { "description": "Manual Page Breaks", "file": "page-breaks.css" }
+    ]
+  }
 }

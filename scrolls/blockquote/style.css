@@ -1,10 +1,4 @@
 /* Style taken from Cato Minor: https://medium.com/better-programming/roamext-roam-extended-a-little-piece-of-code-with-mighty-power-a18184c0c5be */
-:root {
-  --quote-background-color: rgb(244, 242, 242);
-  --quote-border-color: rgb(255, 204, 111);
-  --quote-border-width: 5px;
-}
-
 [data-rem-container-tags~="blockquote"] > div:first-child .rem-text > div {
   background-color: var(--quote-background-color, rgb(244, 242, 242));
   border-left: var(--quote-border-width) solid

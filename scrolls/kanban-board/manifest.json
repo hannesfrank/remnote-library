@@ -1,7 +1,7 @@
 {
   "name": "Kanban Board",
   "id": "com.github.hannesfrank.remnote-library.kanban-board",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Display and drag&drop rems on a kanban board.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
   "shelf": "Custom CSS",
@@ -12,10 +12,10 @@
   "categories": ["kanban"],
   "thumb": "thumb.png",
   "preview": "demo.gif",
-  "install": [
-    {
-      "method": "copy",
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }

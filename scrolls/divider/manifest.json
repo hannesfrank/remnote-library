@@ -3,18 +3,19 @@
   "id": "com.github.hannesfrank.remnote-library.divider",
   "description": "Just a simple horizontal line.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "config": {
     "tags": ["divider"],
-    "demo": "demo.rems"
+    "demo": "demo.rems",
+    "customization": { "file": "config.css" }
   },
   "categories": ["misc"],
-  "install": [
-    {
-      "method": "copy",
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }

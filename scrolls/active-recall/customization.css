@@ -1,0 +1,4 @@
+:root {
+  /* See https://developer.mozilla.org/en-US/docs/Web/CSS/filter for filtering description */
+  --hide-answer-filter: contrast(0%) brightness(1.7);
+}

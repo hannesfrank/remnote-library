@@ -3,19 +3,20 @@
   "id": "com.github.hannesfrank.remnote-library.pills",
   "description": "Display children in round buttons in a line.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "preview": "preview.gif",
   "config": {
     "tags": ["list pills"],
-    "demo": "demo.rems"
+    "demo": "demo.rems",
+    "customization": { "file": "config.css" }
   },
   "categories": ["layout", "list"],
-  "install": [
-    {
-      "method": "copy",
+  "install": {
+    "method": "copy",
+    "content": {
       "file": "style.css"
     }
-  ]
+  }
 }
