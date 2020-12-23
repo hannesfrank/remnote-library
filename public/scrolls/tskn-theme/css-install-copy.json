@@ -1,6 +1,0 @@
-{
-    "install": {
-        "method": "copy",
-        "children": ""
-    }
-}

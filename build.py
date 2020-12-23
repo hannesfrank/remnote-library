@@ -256,11 +256,15 @@ def manifest_content_to_rem(info, scroll_data, scroll_folder: Path):
 ```"""
 
     elif isinstance(info, dict):
-        if "text" in info:
-            content = info["text"]
-        else:
+        if "css" in info:
+            content = info["css"]
+        elif "file" in info:
             content_file = scroll_folder / info["file"]
             content = content_file.read_text()
+        else:
+            raise KeyError(
+                f"{scroll_data['id']} install has neither 'css' nor 'file' key."
+            )
 
         if "description" in info:
             description = info["description"]
@@ -270,6 +274,7 @@ def manifest_content_to_rem(info, scroll_data, scroll_folder: Path):
 {textwrap.indent(content.strip(), " " * 4)}
     ```"""
         else:
+            # TODO: Allow deeper nested subtrees
             return f"""```css
 {content.strip()}
 ```"""
