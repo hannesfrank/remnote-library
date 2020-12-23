@@ -87,18 +87,6 @@ def build_scroll_data(scroll_manifests):
 
         handle_shelf[shelf](scroll_data, scroll_folder)
 
-        install_methods = scroll_data["install"]
-
-        for install_method in install_methods:
-            method = install_method["method"]
-
-            if method not in handle_install_method:
-                raise NotImplementedError(
-                    f"Install method '{method}' of {scroll_id} not supported!"
-                )
-
-            handle_install_method[method](install_method, scroll_data, scroll_folder)
-
         data[scroll_id] = scroll_data
 
     return data
@@ -106,28 +94,42 @@ def build_scroll_data(scroll_manifests):
 
 def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
     """
-    This snippet has to be copy&pasted before the code block is inserted.
-    Since we can not properly paste code blocks yet the copy&paste has to be 2 steps of copy&paste.
-    
-    TODO: Later when we install using the API this block should be generated as a whole automatically. 
+    This snippet has to be copy&pasted before the code block is inserted. Since we can not properly
+    paste code blocks yet the copy&paste has to be 2 steps of copy&paste.
+
+    A Custom CSS block consists of:
+      - metadata (description, id, version, homepage, report link)
+      - Tags (Optional: List of styling tags. These are preserved on updates. The user must
+        migrate/merge them manually.)
+      - Demo (Optional: Show an example of what the style does.)
+      - Code (This is preplaced by auto updates. Users who want to tinker with this are expected to
+        move it somewhere else or just copy the code form the additional install methods.)
+      - Customization (Optional: This is preserved by auto updates, only if there is a major update
+        this has to be migrated manually)
+
     """
     # TODO: The leading empty rem is required for the H1 to work.
-    template = f"""-
+    custom_css_block = f"""-
 - # {scroll_data["name"]}
+    - {" ".join(scroll_data["description"].splitlines())}
     - id: {scroll_data["id"]}
     - version: {scroll_data["version"]}
     - [Homepage]({scroll_data["homepage"]})"""
     report_template = """
     - [Report Problem or Suggest Improvement]({})"""
-    code_template = """
-    - ## Code
-        - Make or move a new Custom CSS block here and copy&paste the second part from the library."""
     tags_template = """
     - ## Tags
 {}"""
     demo_template = """
     - ## Demo
 {}"""
+    code_template = """
+    - ## Code
+{}"""
+    customization_template = """
+    - ## Customization
+{}"""
+
     if "repo" in scroll_data:
         report_title = urllib.parse.quote(
             f"RemNote Library Report: {scroll_data['name']} v{scroll_data['version']}"
@@ -152,23 +154,71 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
         report_url = (
             f"{scroll_data['repo']}/issues/new?title={report_title}&body={report_body}"
         )
-        template += report_template.format(report_url)
-
-    template += code_template
+        custom_css_block += report_template.format(report_url)
 
     config = scroll_data.get("config", {})
+
+    # --- Style Tags ---
     if "tags" in config:
         tag_rems = "\n".join(f"- {tag}" for tag in config["tags"])
         indented_tag_rems = textwrap.indent(tag_rems, " " * 8)
-        template += tags_template.format(indented_tag_rems)
+        custom_css_block += tags_template.format(indented_tag_rems)
 
+    # --- Demo ---
     if "demo" in config:
         demo = scroll_folder / config["demo"]
-        demo_rems = demo.read_text()
+        demo_rems = demo.read_text().strip()
         indented_demo_rems = textwrap.indent(demo_rems, " " * 8)
-        template += demo_template.format(indented_demo_rems)
+        custom_css_block += demo_template.format(indented_demo_rems)
 
-    scroll_data["customCSSBlock"] = template
+    # --- Code ---
+    # In the end only the customCSSBlock matteres for the Custom CSS shelf
+    handle_install_methods(scroll_data, scroll_folder)
+    indented_code = textwrap.indent(scroll_data["install"]["content"], " " * 8)
+    custom_css_block += code_template.format(indented_code)
+
+    # --- Customization ---
+    if "customization" in config:
+        customization_css = manifest_content_to_rem(
+            config["customization"], scroll_data, scroll_folder
+        )
+        indented_customization_css = textwrap.indent(customization_css, " " * 8)
+        custom_css_block += customization_template.format(indented_customization_css)
+
+    # if len(custom_css_block.splitlines()) < 100:
+    #     print(scroll_data["id"])
+    #     print("---------")
+    #     print(custom_css_block)
+    #     print("---------")
+    # else:
+    #     print(scroll_data["id"], "too long")
+    scroll_data["customCSSBlock"] = custom_css_block
+
+
+def handle_install_methods(scroll_data, scroll_folder):
+    scroll_id = scroll_data["id"]
+    install_methods = scroll_data["install"]
+    if isinstance(install_methods, list):
+        # TODO: Legacy install mode. Rework this.
+        # I don't quite remember for which use case I wanted multiple install methods.
+        # Maybe for text templates which should be available for multiple text expanders?
+        print(f"FIXME: Legacy install method in {scroll_id}")
+        for install_method in install_methods:
+            method = install_method["method"]
+            if method not in handle_install_method:
+                raise NotImplementedError(
+                    f"Install method '{method}' of {scroll_id} not supported!"
+                )
+            handle_install_method[method](install_method, scroll_data, scroll_folder)
+        # There is only one (Custom CSS) install for now
+        scroll_data["install"] = scroll_data["install"][0]
+
+    elif isinstance(install_methods, dict):
+        # Custom CSS copy install
+        # This is the most recent and currently only used spec
+        handle_copy_install_method(install_methods, scroll_data, scroll_folder)
+    else:
+        raise ValueError(f"{scroll_id} install method cannot be parsed.")
 
 
 def handle_copy_install_method(install_data, scroll_data, scroll_folder: Path):
@@ -180,8 +230,49 @@ def handle_copy_install_method(install_data, scroll_data, scroll_folder: Path):
       - content: Direct string content.
     """
     if "file" in install_data:
+        # TODO: Legacy install method
         p = scroll_folder / install_data["file"]
-        install_data["content"] = p.read_text()
+        install_data["content"] = manifest_content_to_rem(
+            p.read_text(), scroll_data, scroll_folder
+        )
+    elif "content" in install_data:
+        install_data["content"] = manifest_content_to_rem(
+            install_data["content"], scroll_data, scroll_folder
+        )
+
+
+def manifest_content_to_rem(info, scroll_data, scroll_folder: Path):
+    """Turn the value of "content" from a Custom CSS copy install spec into RemNote flavored markdown."""
+    if isinstance(info, str):
+        return f"""```css
+{info}
+```"""
+
+    elif isinstance(info, dict):
+        if "text" in info:
+            content = info["text"]
+        else:
+            content_file = scroll_folder / info["file"]
+            content = content_file.read_text()
+
+        if "description" in info:
+            description = info["description"]
+
+            return f"""- [ ] {description}
+    ```css
+{textwrap.indent(content.strip(), " " * 4)}
+    ```"""
+        else:
+            return f"""```css
+{content.strip()}
+```"""
+
+    elif isinstance(info, list):
+        return "\n".join(
+            manifest_content_to_rem(item, scroll_data, scroll_folder) for item in info
+        )
+    else:
+        raise ValueError(f"{info} can not be parsed")
 
 
 handle_install_method = {"copy": handle_copy_install_method}

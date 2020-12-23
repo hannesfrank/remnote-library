@@ -48,7 +48,9 @@
         <!-- TODO: Add search box here to ask for the styling tag prefix if applicable.
         This means that the meta block has to be compiled here in the frontend instead of in the backend.
         -->
-        <article class="message is-warning">
+        <CopyButton :content="customCSSBlock" title="Custom CSS Block" />
+        <!-- TODO: Add Other install methods (just code, dev link) -->
+        <!-- <article class="message is-warning">
           <div class="message-header">
             Be careful when pasting!
           </div>
@@ -70,7 +72,7 @@
             <span class="has-background-danger p-1 px-2">in a codeblock</span>
             on the Custom CSS page.
           </li>
-        </ol>
+        </ol> -->
       </div>
     </div>
   </div>
@@ -121,7 +123,7 @@ export default {
     },
     installCopy: function() {
       // TODO: Assume only one install > copy for now. Refactor this when adding link scrolls.
-      return this.install[0].content;
+      return this.install.content;
     },
     installCount: function() {
       return this.scrollData.installCount;
