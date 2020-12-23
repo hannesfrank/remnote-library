@@ -34,9 +34,10 @@ def resolve_to_public(path):
 
 def build_scroll_data(scroll_manifests):
     data = {}
-
+    raw_data = []
     for manifest in scroll_manifests:
         manifest = Path(manifest)
+
         # Besides the data in the manifest there is additional data which a database would store or generate
         # - rating (average stars+number ratings)
         # - install/download count
@@ -45,10 +46,16 @@ def build_scroll_data(scroll_manifests):
         # The author can also be discovered from git: git shortlog -n -s -- myfolder
 
         with manifest.open("r") as f:
-            scroll_data = json.load(f)
+            try:
+                scroll_data = json.load(f)
+            except Exception as e:
+                print(f"There was a problem parsing the manifest of {manifest.parent}")
+                raise e
+            scroll_folder = manifest.parent
+            raw_data.append((scroll_data, scroll_folder))
 
+    for scroll_data, scroll_folder in raw_data:
         scroll_id = scroll_data["id"]
-        scroll_folder = manifest.parent
 
         match = author_regex.match(scroll_data["author"])
         scroll_data["author"] = match.groupdict()
