@@ -76,24 +76,15 @@
         you want to install, click to open it and scroll to
         <em>Installation</em>.
       </li>
-      <li>Click the first copy button <em>Custom CSS Template</em>.</li>
+      <li>Click the <em>Custom CSS Block</em> button.</li>
       <li>
         Go to RemNote and open the Custom CSS page using
         <kbd>Ctrl</kbd>+<kbd>P</kbd>.
       </li>
       <li>
-        Paste the <em>Custom CSS Template</em> with
+        Paste the <em>Custom CSS Block</em> with
         <kbd>Ctrl</kbd>+<kbd>V</kbd>.
       </li>
-      <li>Click the second copy button <em>CSS Code Block</em>.</li>
-      <li>
-        Under the <strong>Code</strong> heading create a checked todo item and
-        insert a code block.
-      </li>
-      <ul>
-        <li>Make sure the language is set to <em>CSS</em>.</li>
-      </ul>
-      <li>Paste <em>CSS Code Block</em> into the code block.</li>
     </ol>
 
     <article class="message is-info">
