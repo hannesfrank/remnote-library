@@ -949,6 +949,14 @@ i.quote.right.icon {
     rgba(200, 200, 200, 0.2) 0px 0px 6px, rgba(200, 200, 200, 0.5) 0px 0px 12px !important;
 }
 
+#hierarchy-editor-toolbar-container
+  #hierarchy-editor__add-to-portal
+  #hierarchy-editor__add-to-portal__inner {
+  /* Fix click issue on Add to Portel search box. Some other element above probably stole the click events. */
+  z-index: 5;
+}
+
+/* Help Button */
 #help-button,
 #help-button:hover {
   bottom: 60px;
