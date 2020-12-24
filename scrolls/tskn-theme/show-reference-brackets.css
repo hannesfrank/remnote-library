@@ -1,0 +1,7 @@
+.rem-reference-link:before {
+  content: "[";
+}
+
+.rem-reference-link:after {
+  content: "]";
+}

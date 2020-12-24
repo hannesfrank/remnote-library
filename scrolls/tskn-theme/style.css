@@ -1,12 +1,8 @@
 /*
-@name           tsknDesignTheme
-@namespace      https://github.com/ethomasv/
-@version        1.0.3
+@version        1.1.0
 @description    RemNote Theme Designed by tskn > https://dribbble.com/shots/14178356-RemNote-Concept
 @author         Code by Eva Thomas 
 @homepageURL    https://github.com/ethomasv/RemNoteTheme
-@updateURL      https://raw.githubusercontent.com/ethomasv/RemNoteTheme/master/tsknDesignTheme.user.css
-@preprocessor   stylus
 */
 
 /* === Changes from the original theme. === */
@@ -16,374 +12,96 @@
   font-family: monaco, menlo, consolas, courier new;
 }
 
-
-/* === Original theme below === */
-
-/* if hide-indented-rems
-    { */
-.rem-indented-indicator {
-  display: none;
-}
-/* }
-
-    if not hide-indented-rems
-    {
-        .rem-indented-indicator
-        {
-            color: main-link-c;
-            font-size: 0.75em;
-            display: none;
-        }
-    } */
-
-/* if hide-cloze-menu-arrow
-    { */
-
-i.icon.caret.square.down.icon:before {
-  display: none;
-}
-
-i.icon.caret.square.down.icon:after {
-  content: "+";
-}
-/* } */
-
-/* if roomy-spacing
-    { */
+/* === Original theme below (see also factored out modules) === */
 div {
-  line-height: 1.5em;
+  line-height: var(--spacing-line-height, 1.5em);
 }
 
 .tree-node-container {
-  margin-top: 0.5em;
+  margin-top: var(--spacing-tree-node-container-margin-top, 0.5em);
 }
 
 /* Paragraph Bullet */
 .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible {
-  margin-top: 7px;
+  margin-top: var(--spacing-bullet-paragraph-margin-top, 7px);
 }
 
 .rem-bullet__container .rem-bullet.rem-bullet--hidden-children {
-  margin-top: 7px;
+  margin-top: var(--spacing-bullet-paragraph-margin-top, 7px);
 }
 
 /* Document Bullet */
 .file.small.icon.rem-bullet__icon.rem-bullet--hidden-children,
 .file.small.icon.rem-bullet__icon.rem-bullet--all-children-visible {
-  margin-top: 3px;
+  margin-top: var(--spacing-bullet-document-margin-top, 3px);
 }
 
 .file.small.icon.rem-bullet__icon.rem-bullet--hidden-children {
-  margin-top: 3px;
+  margin-top: var(--spacing-bullet-document-margin-top, 3px);
 }
 
 /* Folder Bullet */
 .folder.small.icon.rem-bullet__icon.rem-bullet--hidden-children,
 .folder.small.icon.rem-bullet__icon.rem-bullet--all-children-visible {
-  margin-top: 3px;
+  margin-top: var(--spacing-bullet-document-margin-top, 3px);
 }
 
 .folder.small.icon.rem-bullet__icon.rem-bullet--hidden-children {
-  margin-top: 3px;
+  margin-top: var(--spacing-bullet-document-margin-top, 3px);
 }
 
 /* Concept Rem type Bullet */
 .rem-container--concept-rem-type
   .rem-bullet__container
   .rem-bullet.rem-bullet--all-children-visible {
-  margin-top: 7px;
+  margin-top: var(--spacing-bullet-conceptDescriptor-margin-top, 7px);
 }
 
 .rem-container--concept-rem-type
   .rem-bullet__container
   .rem-bullet.rem-bullet--hidden-children {
-  margin-top: 7px;
+  margin-top: var(--spacing-bullet-conceptDescriptor-margin-top, 7px);
 }
 
 /* Descriptor Rem type Bullet */
 .rem-container--descriptor-rem-type
   .rem-bullet__container
   .rem-bullet.rem-bullet--all-children-visible {
-  margin-top: 7px;
+  margin-top: var(--spacing-bullet-conceptDescriptor-margin-top, 7px);
 }
 
 .rem-container--descriptor-rem-type
   .rem-bullet__container
   .rem-bullet.rem-bullet--hidden-children {
-  margin-top: 7px;
+  margin-top: var(--spacing-bullet-conceptDescriptor-margin-top, 7px);
 }
-/* }
 
-    if not roomy-spacing
-    {
-        div
-        {
-            line-height: 1.3em;
-        }
+/* Header */
+.rem-bullet__container .rem-bullet.rem-header__bullet--1 {
+  margin-top: var(--header-1-margin-top, 11px);
+}
 
-        .tree-node-container
-        {
-            margin-top: 0em;
-        }
+.rem-bullet__container .rem-bullet.rem-header__bullet--2 {
+  margin-top: var(--header-2-margin-top, 8px);
+}
 
-        .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible
-        {
-            margin-top: 4px;
-        }
-
-        .rem-bullet__container .rem-bullet.rem-bullet--hidden-children
-        {
-            margin-top: 4px;
-        }
-
-        .file.small.icon.rem-bullet__icon.rem-bullet--hidden-children,
-        .file.small.icon.rem-bullet__icon.rem-bullet--all-children-visible
-        {
-            margin-top: 1px;
-        }
-
-        .file.small.icon.rem-bullet__icon.rem-bullet--hidden-children
-        {
-            margin-top: 1px;
-        }
-
-        .folder.small.icon.rem-bullet__icon.rem-bullet--hidden-children,
-        .folder.small.icon.rem-bullet__icon.rem-bullet--all-children-visible
-        {
-            margin-top: 1px;
-        }
-
-        .folder.small.icon.rem-bullet__icon.rem-bullet--hidden-children
-        {
-            margin-top: 1px;
-        }
-
-        .rem-container--concept-rem-type .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible
-        {
-            margin-top: 4px;
-        }
-
-        .rem-container--concept-rem-type .rem-bullet__container .rem-bullet.rem-bullet--hidden-children
-        {
-            margin-top: 4px;
-        }
-
-        .rem-container--descriptor-rem-type .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible
-        {
-            margin-top: 4px;
-        }
-
-        .rem-container--descriptor-rem-type .rem-bullet__container .rem-bullet.rem-bullet--hidden-children
-        {
-            margin-top: 4px;
-        }
-    } */
-
-/* Smaller Headers */
-/* if smaller-headers
-    {
-
-        .rem-text.rem-header--1
-        {
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        .rem-text.rem-header--2
-        {
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .rem-text.rem-header--3
-        {
-            font-size: 15px;
-            font-weight: 500;
-        }
-
-        if roomy-spacing
-        {
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--1
-            {
-                margin-top: 11px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--1
-            {
-                margin-top: 11px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--2
-            {
-                margin-top: 8px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--2
-            {
-                margin-top: 8px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--3
-            {
-                margin-top: 6px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--3
-            {
-                margin-top: 6px;
-            }
-        }
-
-        if not roomy-spacing
-        {
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--1
-            {
-                margin-top: 8px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--1
-            {
-                margin-top: 8px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--2
-            {
-                margin-top: 5px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--2
-            {
-                margin-top: 5px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--3
-            {
-                margin-top: 3px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--3
-            {
-                margin-top: 3px;
-            }
-        }
-    } */
-
-/* if not smaller-headers
-    { */
+.rem-bullet__container .rem-bullet.rem-header__bullet--3 {
+  margin-top: var(--header-3-margin-top, 6px);
+}
 
 .rem-text.rem-header--1 {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: var(--header-1-font-size, 18px);
+  font-weight: var(--header-1-font-weight, 500);
 }
 
 .rem-text.rem-header--2 {
-  font-size: 19px;
-  font-weight: 600;
+  font-size: var(--header-2-font-size, 16px);
+  font-weight: var(--header-2-font-weight, 600);
 }
 
 .rem-text.rem-header--3 {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-/* if roomy-spacing
-        { */
-
-.rem-bullet__container
-  .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--1 {
-  margin-top: 20px;
-}
-
-.rem-bullet__container
-  .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--1 {
-  margin-top: 20px;
-}
-
-.rem-bullet__container
-  .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--2 {
-  margin-top: 11px;
-}
-
-.rem-bullet__container
-  .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--2 {
-  margin-top: 11px;
-}
-
-.rem-bullet__container
-  .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--3 {
-  margin-top: 6px;
-}
-
-.rem-bullet__container
-  .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--3 {
-  margin-top: 6px;
-}
-/* }
-
-        if not roomy-spacing
-        {
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--1
-            {
-                margin-top: 18px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--1
-            {
-                margin-top: 18px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--2
-            {
-                margin-top: 8px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--2
-            {
-                margin-top: 8px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--all-children-visible.rem-header__bullet--3
-            {
-                margin-top: 3px;
-            }
-
-            .rem-bullet__container .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--3
-            {
-                margin-top: 3px;
-            }
-        }
-    } */
-
-/* if not hide-brackets
-    { */
-.rem-reference-link:before {
-  content: "[";
-}
-
-.rem-reference-link:after {
-  content: "]";
-}
-/* } */
-
-/* Scroller */
-div::-webkit-scrollbar {
-  width: 0px !important;
-  height: 2px !important;
-}
-
-div::-webkit-scrollbar-track {
-  background-color: transparent !important;
-}
-
-div::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.4) !important;
-  border-radius: 10px !important;
-}
-
-div::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.4) !important;
+  font-size: var(--header-3-font-size, 15px);
+  font-weight: var(--header-3-font-weight, 500);
 }
 
 /* Documents List */
@@ -1253,6 +971,11 @@ i.quote.right.icon {
 
 .rem-reference--highlighted {
   box-shadow: none;
+}
+
+.rem-indented-indicator {
+  color: var(--reference-c, #b979cf);
+  vertical-align: text-bottom;
 }
 
 /* 2 docs view */

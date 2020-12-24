@@ -1,10 +1,10 @@
 {
   "name": "tskn's Theme",
   "id": "com.github.hannesfrank.remnote-library.tskn-theme",
-  "description": "Light, modern theme.\nThis is just a copy&paste adaption of the Stylus theme from the original repo.\nSee the Homepage for proper attribution.",
+  "description": "Light, modern theme.\nDesign by tskn, code by Eva Thomas.\nSee the Homepage for proper attribution.",
   "author": "Eva Thomas",
   "homepage": "https://github.com/ethomasv/RemNoteTheme",
-  "version": "0.0.2",
+  "version": "1.1.0",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "preview": "preview.png",
@@ -14,8 +14,57 @@
   },
   "install": {
     "method": "copy",
-    "content": {
-      "file": "style.css"
-    }
+    "content": [
+      {
+        "description": "Hide Indented Rem Indicator |",
+        "file": "hide-indented-rem-indicator.css",
+        "enabled": true
+      },
+
+      {
+        "description": "Hide Cloze Menu Button while editing",
+        "file": "hide-cloze-menu-arrow.css",
+        "enabled": false
+      },
+      {
+        "description": "Show Reference Brackets [ ]",
+        "file": "show-reference-brackets.css",
+        "enabled": false
+      },
+      {
+        "description": "Custom Scroll Bar",
+        "file": "scroll-bar.css",
+        "enabled": false
+      },
+      {
+        "description": "**Choose one:** Spacing and Header Size",
+        "content": [
+          {
+            "description": "Roomy Spacing and Large Headers",
+            "enabled": true,
+            "file": "roomy-spacing-large-headers.css"
+          },
+          {
+            "description": "Roomy Spacing and Small Headers",
+            "enabled": false,
+            "file": "roomy-spacing-small-headers.css"
+          },
+          {
+            "description": "Compact Spacing and Large Headers",
+            "enabled": false,
+            "file": "compact-spacing-large-headers.css"
+          },
+          {
+            "description": "Compact Spacing and Small Headers",
+            "enabled": false,
+            "file": "compact-spacing-small-headers.css"
+          }
+        ]
+      },
+      {
+        "description": "Theme",
+        "file": "style.css"
+      }
+    ]
   }
 }

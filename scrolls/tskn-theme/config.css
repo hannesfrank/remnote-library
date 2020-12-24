@@ -31,6 +31,18 @@
   /* Quote Background Color */
   --quote-background-c: #ecf3f6;
 
+  /* Header size */  
+  /* --header-1-font-size: 18px;
+  --header-1-font-weight: 500;
+  --header-2-font-size: 16px;
+  --header-2-font-weight: 600;
+  --header-3-font-size: 15px;
+  --header-3-font-weight: 500;
+  
+  --header-1-margin-top: 8px;
+  --header-2-margin-top: 5px;
+  --header-3-margin-top: 3px; */
+
   /* === Font === */
   /* Chose one of the following fonts */
   /* --font-body: "Open Sans, sans-serif"; */

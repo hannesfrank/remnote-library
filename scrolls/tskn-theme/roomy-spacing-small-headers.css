@@ -1,0 +1,18 @@
+:root {
+  --spacing-line-height: 1.5em;
+  --spacing-tree-node-container-margin-top: 0.5em;
+  --spacing-bullet-paragraph-margin-top: 7px;
+  --spacing-bullet-document-margin-top: 3px;
+  --spacing-bullet-conceptDescriptor-margin-top: 7px;
+
+  --header-1-margin-top: 11px;
+  --header-2-margin-top: 8px;
+  --header-3-margin-top: 6px;
+
+  --header-1-font-size: 18px;
+  --header-1-font-weight: 500;
+  --header-2-font-size: 16px;
+  --header-2-font-weight: 600;
+  --header-3-font-size: 15px;
+  --header-3-font-weight: 500;
+}
