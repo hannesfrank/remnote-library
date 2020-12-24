@@ -1,18 +1,47 @@
 {
   "name": "Rem Type and Practice Direction",
   "id": "com.github.hannesfrank.remnote-css-rem-types",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Add icons for flashcard/rem types and practice directions.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
   "homepage": "https://github.com/hannesfrank/remnote-css-rem-types",
   "shelf": "Custom CSS",
-  "categories": ["icon"],
+  "categories": ["flashcard", "icon"],
+  "config": {
+    "demo": "demo.rems"
+  },
   "thumb": "remnote-css-card-rems-social.png",
   "preview": "custom_style.png",
-  "install": [
-    {
-      "method": "copy",
-      "content": "@import URL(\"https://hannesfrank.github.io/remnote-css-rem-types/everything.css\");"
-    }
-  ]
+  "install": {
+    "method": "copy",
+    "content": [
+      {
+        "description": "Practice Direction Arrows",
+        "css": "@import URL(\"https://hannesfrank.github.io/remnote-css-rem-types/practice-direction.css\");"
+      },
+      {
+        "description": "**Choose one:** Concept, Descriptor, Question Icons",
+        "content": [
+          {
+            "description": "SVG Icons",
+            "css": "@import URL(\"https://hannesfrank.github.io/remnote-css-rem-types/rem-type.css\");",
+            "enabled": true
+          },
+          {
+            "description": "ASCII Icons",
+            "css": "@import URL(\"https://hannesfrank.github.io/remnote-css-rem-types/rem-type-simple.css\");",
+            "enabled": false
+          }
+        ]
+      },
+      {
+        "description": "Multiline, List, Set Icons",
+        "css": "@import URL(\"https://hannesfrank.github.io/remnote-css-rem-types/card-type.css\");"
+      },
+      {
+        "description": "Reset Text Styling (concept bold etc.)",
+        "css": "@import URL(\"https://hannesfrank.github.io/remnote-css-rem-types/text-style.css\");"
+      }
+    ]
+  }
 }
