@@ -209,6 +209,8 @@ def handle_install_methods(scroll_data, scroll_folder):
         # TODO: Legacy install mode. Rework this.
         # I don't quite remember for which use case I wanted multiple install methods.
         # Maybe for text templates which should be available for multiple text expanders?
+        # Another use would be page templates consisting of css to copy and text which would benefit
+        # from general install methods (pairs of buttonTitle: textToCopy) in the frontend.
         print(f"FIXME: Legacy install method in {scroll_id}")
         for install_method in install_methods:
             method = install_method["method"]
@@ -248,14 +250,50 @@ def handle_copy_install_method(install_data, scroll_data, scroll_folder: Path):
         )
 
 
-def manifest_content_to_rem(info, scroll_data, scroll_folder: Path):
-    """Turn the value of "content" from a Custom CSS copy install spec into RemNote flavored markdown."""
-    if isinstance(info, str):
-        return f"""```css
-{info}
+def make_enabled_marker(info):
+    if "enabled" in info:
+        if info["enabled"]:
+            return "[ ] "
+        else:
+            return "[x] "
+    else:
+        return ""
+
+
+def make_code_block(code, lang="css"):
+    return f"""```css
+{code}
 ```"""
 
+
+def manifest_content_to_rem(info, scroll_data, scroll_folder: Path):
+    """Turn the value of "content" from a Custom CSS copy install spec into RemNote flavored markdown."""
+    # TODO: This turned pretty spaghetti. I should at least unit test this. Better would be to
+    # validate this using a json schema.
+    # TODO: Generalize install.content to use install.description with default value `## Code`
+    # TODO: Make formatting class/closure since scroll_data and scroll_folder is passed as arguments a lot
+    copy_template = """- {enabled_marker}{description}
+{indented_content}"""
+
+    if isinstance(info, str):
+        return make_code_block(info)
+
     elif isinstance(info, dict):
+        if "content" in info:
+            # Subtree with more blocks
+            if "description" not in info:
+                raise KeyError(
+                    f"{scroll_data['id']} install content must have description."
+                )
+            content = manifest_content_to_rem(
+                info["content"], scroll_data, scroll_folder
+            )
+            return copy_template.format(
+                enabled_marker=make_enabled_marker(info),
+                description=info["description"],
+                indented_content=textwrap.indent(content, " " * 4),
+            )
+            return
         if "css" in info:
             content = info["css"]
         elif "file" in info:
@@ -268,16 +306,15 @@ def manifest_content_to_rem(info, scroll_data, scroll_folder: Path):
 
         if "description" in info:
             description = info["description"]
-
-            return f"""- [ ] {description}
-    ```css
-{textwrap.indent(content.strip(), " " * 4)}
-    ```"""
+            # TODO: Allow enabled/disabled without a description
+            code_block = make_code_block(content.strip())
+            return copy_template.format(
+                enabled_marker=make_enabled_marker(info),
+                description=description,
+                indented_content=textwrap.indent(code_block, " " * 4),
+            )
         else:
-            # TODO: Allow deeper nested subtrees
-            return f"""```css
-{content.strip()}
-```"""
+            return make_code_block(content.strip())
 
     elif isinstance(info, list):
         return "\n".join(
