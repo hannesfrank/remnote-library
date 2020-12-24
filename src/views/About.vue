@@ -59,48 +59,45 @@
     </ul>
     <h3>Scrolls</h3>
     <ul>
-      <li>Divider</li>
-      <li>Kanban Board</li>
-      <li>Table</li>
-      <li>Sidebar Icons</li>
-      <li>Line Numbered Code Blocks</li>
+      <li>?</li>
     </ul>
 
     <h2 id="vision">WIP: Vision and Theme</h2>
     <p>A library is a institution to share the knowledge of humankind.</p>
     <p>
       Knowledge of all kinds - facts, procedures and even computer code - have
-      the unique property that it can be shared without additional properties
-      without additional cost. This is magical.
+      the unique property that it can be shared without additional cost. This is
+      magical.
     </p>
 
-    <p>
+    <!-- <p>
       This library hosts numerous scroll which aid you on your learning journey.
       Take a break from watering your tree of knowledge and wander through the
       halls of this place.
-    </p>
+    </p> -->
     <p>
-      Later all kinds of
+      There could be all kinds of
       <em
         ><img src="../assets/scroll.svg" alt="scroll icon" class="icon" />
         Scrolls</em
-      >
-      could be supported:
+      >:
     </p>
     <ul>
-      <li>🍪 User Scripts</li>
+      <li>🍪 Custom CSS and Page Templates</li>
+      <li>🍪 User Scripts (maybe even Custom JavaScript at some point?)</li>
+      <li><a href="https://forum.remnote.io/t/what-is-your-template-snippet-workflow/1203">Text Templates</a> and <a href="https://forum.remnote.io/t/smart-rem/1435">⚙ Smart Rem</a></li>
       <li>Links resources like Video and Text Tutorials</li>
       <li>
-        Even plugins and shared documents (but those are also listed in RemNote
+        Even flashcards and shared documents (but those are also listed in RemNote
         itself).
       </li>
     </ul>
-    Those will be organized into 📚 <em>Shelves</em>.
+    Those types will be organized into 📚 <em>Shelves</em> of the Library.
 
     <h2>Special Thanks</h2>
     <ul>
       <li>
-        <a href="https://github.com/WildGenius">WildGenius</a> and others for
+        <a href="https://github.com/WildGenius">WildGenius (UMNiK)</a>, ognsya and others for
         extensive feedback.
       </li>
     </ul>
@@ -109,6 +106,18 @@
       Yes, please 🙃
     </p>
     <h2>Changelog</h2>
+    <h3>2020-12-24 🎅</h3>
+    <ul>
+      <li>
+        Feature: New one click copy install for Custom CSS Scrolls.
+      </li>
+    </ul>
+    <h3>2020-12-20 🎅</h3>
+    <ul>
+      <li>
+        Feature: Add UI elements for category search.
+      </li>
+    </ul>
     <h3>2020-12-09</h3>
     <ul>
       <li>

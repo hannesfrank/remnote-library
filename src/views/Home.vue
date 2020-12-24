@@ -35,6 +35,10 @@
     <h2>What can I get here?</h2>
     <div class="is-flex is-flex-wrap-wrap">
       <scroll-card
+        :scrollData="scrolls['com.github.hannesfrank.tskn-theme']"
+        class="m-2"
+      />
+      <scroll-card
         :scrollData="scrolls['com.github.hannesfrank.remnote-css-rem-types']"
         class="m-2"
       />
@@ -82,20 +86,16 @@
         <kbd>Ctrl</kbd>+<kbd>P</kbd>.
       </li>
       <li>
-        Paste the <em>Custom CSS Block</em> with
-        <kbd>Ctrl</kbd>+<kbd>V</kbd>.
+        Paste the <em>Custom CSS Block</em> with <kbd>Ctrl</kbd>+<kbd>V</kbd>.
       </li>
     </ol>
 
     <article class="message is-info">
-      <div class="message-header">
-        <p>Don't worry!</p>
-      </div>
       <div class="message-body">
-        The install process will not always be that complicated.
+        In the future the install process might even get easier!
         <br />
-        Once the API is extended it will be just a button click to install,
-        update or remove!
+        Once RemNote's API is extended it will be just a button click to install,
+        update or remove.
       </div>
     </article>
   </div>
