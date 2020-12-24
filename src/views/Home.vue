@@ -76,7 +76,7 @@
         you want to install, click to open it and scroll to
         <em>Installation</em>.
       </li>
-      <li>Click the button <em>Custom CSS Block</em>.</li>
+      <li>Click the <em>Custom CSS Block</em> button.</li>
       <li>
         Go to RemNote and open the Custom CSS page using
         <kbd>Ctrl</kbd>+<kbd>P</kbd>.
