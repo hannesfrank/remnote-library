@@ -1,0 +1,7 @@
+i.icon.caret.square.down.icon:before {
+  display: none;
+}
+
+i.icon.caret.square.down.icon:after {
+  content: "+";
+}

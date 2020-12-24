@@ -192,13 +192,6 @@ def handle_shelf_custom_css(scroll_data, scroll_folder: Path):
         indented_customization_css = textwrap.indent(customization_css, " " * 8)
         custom_css_block += customization_template.format(indented_customization_css)
 
-    # if len(custom_css_block.splitlines()) < 100:
-    #     print(scroll_data["id"])
-    #     print("---------")
-    #     print(custom_css_block)
-    #     print("---------")
-    # else:
-    #     print(scroll_data["id"], "too long")
     scroll_data["customCSSBlock"] = custom_css_block
 
 
@@ -332,3 +325,4 @@ if __name__ == "__main__":
 
     with open("src/data.json", "w") as f:
         json.dump(data, f, sort_keys=True, indent=2)
+    print("Building Scrolls. Complete!")
