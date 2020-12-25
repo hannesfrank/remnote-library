@@ -1,0 +1,20 @@
+{
+  "name": "Link Tooltip",
+  "id": "com.github.hannesfrank.remnote-library.link-tooltip",
+  "description": "Show the URL of a link as a tooltip when hovering it.",
+  "author": "Hannes Frank <frankhannes@gmail.com>",
+  "version": "0.0.1",
+  "shelf": "Custom CSS",
+  "thumb": "thumb.png",
+  "categories": ["interface", "link"],
+  "config": {
+    "demo": "demo.rems",
+    "customization": { "file": "config.css" }
+  },
+  "install": {
+    "method": "copy",
+    "content": {
+      "file": "style.css"
+    }
+  }
+}

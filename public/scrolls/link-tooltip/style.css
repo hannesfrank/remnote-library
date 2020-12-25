@@ -1,0 +1,49 @@
+.rich-text-editor .LinkNode {
+  /* With position: relative and display: inline the absolute positioning left: 50% of multi-line links seem to orient itself on the last line. display: contents uses the whole bounding box somehow. */
+  /* Update: This breaks for short links... */
+  /* display: contents; */
+}
+
+.rich-text-editor .LinkNode:hover::before,
+.rich-text-editor .LinkNode:hover::after {
+  position: absolute;
+  left: 50%;
+  animation: linknode-href-tooltip var(--url-tooltip-animation-time, 60ms)
+    ease-out forwards;
+}
+
+.rich-text-editor .LinkNode:hover::after {
+  content: attr(data-href);
+  text-align: center;
+  font-size: var(--url-tooltip-font-size, 0.8em);
+  color: var(--url-tooltip-font-color, black);
+  background-color: var(--url-tooltip-background-color, whitesmoke);
+  max-width: 30em;
+  padding: 3px 5px;
+
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+
+  bottom: calc(100% + var(--url-tooltip-dink-size, 5px));
+  transform: translate(-50%, 50%) scale(0.3);
+
+  border: 1px solid var(--url-tooltip-border-color, grey);
+  border-radius: 3px;
+}
+
+.rich-text-editor .LinkNode:hover::before {
+  content: "";
+  width: 0;
+  bottom: calc(100%);
+  transform: translate(-50%, 50%);
+
+  border: var(--url-tooltip-dink-size, 5px) solid transparent;
+  border-bottom-width: 0px;
+  border-top-color: var(--url-tooltip-border-color, grey);
+}
+
+@keyframes linknode-href-tooltip {
+  to {
+    transform: translate(-50%, 0);
+  }
+}
