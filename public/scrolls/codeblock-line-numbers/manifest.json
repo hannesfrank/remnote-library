@@ -3,7 +3,7 @@
   "id": "com.github.hannesfrank.remnote-library.codeblock-line-numbers",
   "description": "Add line numbers to code blocks.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "config": {
