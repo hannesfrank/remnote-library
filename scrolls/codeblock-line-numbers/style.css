@@ -1,4 +1,3 @@
-/* Line Numbers. */
 .codeLine {
   counter-increment: codeLineNumber;
 }
@@ -15,7 +14,6 @@
 
 #code-node {
   padding-left: var(--line-number-width);
-  overflow: hidden; /* make number bar not overflow */
 }
 
 /* Background of number bar */
@@ -28,8 +26,9 @@
   bottom: 0;
   color: var(--line-number-color, black);
   background-color: var(--line-number-background-color, rgba(0, 0, 0, 0.04));
+  border-radius: var(--code-node-border-radius, 7px) 0 0
+    var(--code-node-border-radius, 7px);
   width: calc(var(--line-number-width, 45px) - 7px);
-  height: 100%;
 }
 
 /* Quick fix for jumping line heights.

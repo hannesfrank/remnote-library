@@ -1,0 +1,12 @@
+:root {
+  --url-tooltip-background-color: whitesmoke;
+  --url-tooltip-font-color: black;
+  --url-tooltip-border-color: grey;
+  --url-tooltip-font-size: 0.8em;
+
+  /* Pointing triangle size. Use 0 to hide. */
+  --url-tooltip-dink-size: 7px;
+
+  /* Animation time. Use 0 for instant display. */
+  --url-tooltip-animation-time: 60ms;
+}

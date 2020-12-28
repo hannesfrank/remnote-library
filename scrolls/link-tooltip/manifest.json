@@ -1,16 +1,16 @@
 {
-  "name": "Codeblock Line Numbers",
-  "id": "com.github.hannesfrank.remnote-library.codeblock-line-numbers",
-  "description": "Add line numbers to code blocks.",
+  "name": "Link Tooltip",
+  "id": "com.github.hannesfrank.remnote-library.link-tooltip",
+  "description": "Show the URL of a link as a tooltip when hovering it.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.1.1",
+  "version": "0.0.1",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
+  "categories": ["interface", "link"],
   "config": {
     "demo": "demo.rems",
     "customization": { "file": "config.css" }
   },
-  "categories": ["codeblock"],
   "install": {
     "method": "copy",
     "content": {
