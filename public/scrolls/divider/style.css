@@ -1,23 +1,19 @@
-:root {
-  --divider-style: 1px solid black;
-}
-
 [data-rem-tags~="divider"]:not(:focus-within) {
   color: transparent;
   position: relative;
 }
 
-[data-rem-tags~="divider"]:not(:focus-within):not(:hover)
+[data-rem-tags~="divider"]:not(:focus-within)
   .rem-bullet__container {
   display: none;
 }
 
-[data-rem-tags~="divider"]:not(:focus-within):not(:hover)
+[data-rem-tags~="divider"]:not(:focus-within)
   .hierarchy-editor__tag-bar {
   display: none;
 }
 
-[data-rem-tags~="divider"]:not(:focus-within):not(:hover):before {
+[data-rem-tags~="divider"]:not(:focus-within):before {
   content: " ";
   display: block;
   position: absolute;
