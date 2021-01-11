@@ -3,7 +3,7 @@
   "id": "com.github.hannesfrank.remnote-library.divider",
   "description": "Just a simple horizontal line.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "shelf": "Custom CSS",
   "thumb": "thumb.png",
   "config": {

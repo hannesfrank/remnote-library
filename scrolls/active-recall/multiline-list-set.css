@@ -1,14 +1,14 @@
 [data-rem-container-tags~="active-recall"]
   .tree-node-container--forwards-practice-enabled.tree-node-container--multiline-card-type
-  > .TreeNodeListItems
+  > .TreeNode--list
   > .tree-node-container:not(:focus-within):not(:hover):not([data-rem-container-tags~="learned"]),
 [data-rem-container-tags~="active-recall"]
   .tree-node-container--forwards-practice-enabled.tree-node-container--list-card-type
-  > .TreeNodeListItems
+  > .TreeNode--list
   > .tree-node-container:not(:focus-within):not(:hover):not([data-rem-container-tags~="learned"]),
 [data-rem-container-tags~="active-recall"]
   .tree-node-container--forwards-practice-enabled.tree-node-container--set-card-type
-  > .TreeNodeListItems
+  > .TreeNode--list
   > .tree-node-container:not(:focus-within):not(:hover):not([data-rem-container-tags~="learned"]) {
   background: white;
   filter: var(--hide-answer-filter);

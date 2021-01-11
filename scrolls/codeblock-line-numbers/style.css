@@ -13,7 +13,7 @@
 }
 
 #code-node {
-  padding-left: var(--line-number-width);
+  padding-left: var(--line-number-width) !important;
 }
 
 /* Background of number bar */
