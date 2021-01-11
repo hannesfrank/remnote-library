@@ -1,7 +1,7 @@
 {
   "name": "Active Recall Learning",
   "id": "com.github.hannesfrank.remnote-library.active-recall",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Do your initial learning with active recall directly inside your notes.\nSee the Homepage for detailed usage instructions.",
   "author": "Hannes Frank <frankhannes@gmail.com>",
   "shelf": "Custom CSS",
