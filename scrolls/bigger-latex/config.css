@@ -1,6 +1,6 @@
 :root {
   /* Font size of inline latex. */
-  --latex-display-font-size: 24px;
-  /* Font size of latex blocks. */
   --latex-inline-font-size: 24px;
+  /* Font size of latex blocks. */
+  --latex-display-font-size: 24px;
 }
