@@ -1,0 +1,38 @@
+:root {
+  /* Practice direction */
+  --forward-practice-icon: "⇔";
+  --forward-practice-color: goldenrod;
+  --backward-practice-icon: "⇒";
+  --backward-practice-color: green;
+  --both-practice-icon: "⇐";
+  --both-practice-color: blue;
+  --disabled-practice-icon: "⇐";
+  --disabled-practice-color: tomato;
+
+  /* Special icons for questions.
+    
+     Normally it would not make much sense to find the question given the answer, like "??? ?:: 42"
+     so you can enable showing a warning when this is the case.
+     If you use question cards to work around the CD-Framework and store arbitrary associative pairs
+     then you can disable this extra style in the Code section.
+   */
+  --question-backward-practice-icon: "!⇐!";
+  --question-backward-practice-color: red;
+  --question-both-practice-icon: "!⇔!";
+  --question-both-practice-color: red;
+
+  /* Card type icons */
+  --concept-icon-color: green;
+  --descriptor-icon-color: royalblue;
+  --question-icon-color: mediumpurple;
+  --slot-icon-color: grey;
+
+  /* If you are using the ASCII Icons (enable in the Code section)
+     you can configure the content here. Unicode symbols should also work.
+   */
+  --concept-icon: "〈C〉";
+  --descriptor-icon: "〈D〉";
+  --question-icon: "〈?〉";
+  --slot-icon: "〈S〉";
+  --rem-icon-font-weight: bold;
+}

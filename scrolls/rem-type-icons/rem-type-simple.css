@@ -5,11 +5,11 @@
   > div::before,
 .rem-container--concept-rem-type /* normal */
   > .rem-text
-  > .EditorContainer:before {
+  > .EditorContainer:not(.rem-bullet__number):before {
   /* content: "｢C｣ "; */
-  content: "〈C〉 ";
-  font-weight: bold;
-  color: green;
+  content: var(--concept-icon, "〈C〉 ");
+  color: var(--concept-icon-color, green);
+  font-weight: var(--rem-icon-font-weight, bold);
 }
 .rem-container--descriptor-rem-type /* hover */
   > .rem-text
@@ -18,10 +18,10 @@
   > div::before,
 .rem-container--descriptor-rem-type /* normal */
   > .rem-text
-  > .EditorContainer:before {
-  content: "〈D〉 ";
-  font-weight: bold;
-  color: royalblue;
+  > .EditorContainer:not(.rem-bullet__number):before {
+  content: var(--descriptor-icon, "〈D〉 ");
+  color: var(--descriptor-icon-color, royalblue);
+  font-weight: var(--rem-icon-font-weight, bold);
 }
 .rem-container--question-rem-type /* hover */
   > .rem-text
@@ -30,10 +30,10 @@
   > div::before,
 .rem-container--question-rem-type /* normal */
   > .rem-text
-  > .EditorContainer:before {
-  content: "〈?〉 ";
-  font-weight: bold;
-  color: mediumpurple;
+  > .EditorContainer:not(.rem-bullet__number):before {
+  content: var(--question-icon, "〈?〉 ");
+  color: var(--question-icon-color, mediumpurple);
+  font-weight: var(--rem-icon-font-weight, bold);
 }
 .rem-container--slot-rem-type /* hover */
   > .rem-text
@@ -42,10 +42,11 @@
   > div::before,
 .rem-container--slot-rem-type /* normal */
   > .rem-text
-  > .EditorContainer:before {
+  > .EditorContainer:not(.rem-bullet__number):before {
   /* content: "〈📥〉 "; */
-  content: "〈S〉 ";
-  color: grey;
+  content: var(--slot-icon, "〈S〉 ");
+  color: var(--slot-icon-color, grey);
+  font-weight: var(--rem-icon-font-weight, bold);
 }
 
 /* no_content-rem-type are code blocks for example. */

@@ -6,16 +6,16 @@
 }
 
 /* Bidirectional, forward and backward cards. */
-:not(.rem-container--question-rem-type).rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
+.rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
   /* This :not(...) chain works around a SlateJS peculiarity of inserting zero width spaces into the tree
    * e.g. span.descriptor_rem_type.separator-symbol > span{&#65279;}
    */
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
-:not(.rem-container--question-rem-type).rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
+.rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
   .MultiLineCardIndicator::after {
-  content: "⇔";
+  content: var(--forward-practice-icon, "⇔");
   font-size: 15px;
-  color: goldenrod;
+  color: var(--forward-practice-color, goldenrod);
   margin-left: 3px;
 }
 
@@ -23,19 +23,19 @@
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
 .rem-container--forwards-practice-enabled.rem-container--backwards-practice-disabled
   .MultiLineCardIndicator::after {
-  content: "⇒";
+  content: var(--backward-practice-icon, "⇒");
   font-size: 15px;
-  color: green;
+  color: var(--backward-practice-color, green);
   margin-left: 3px;
 }
 
-:not(.rem-container--question-rem-type).rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
+.rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
-:not(.rem-container--question-rem-type).rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
+.rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
   .MultiLineCardIndicator::after {
-  content: "⇐";
+  content: var(--both-practice-icon, "⇐");
   font-size: 15px;
-  color: blue;
+  color: var(--both-practice-color, blue);
   margin-left: 3px;
 }
 
@@ -56,29 +56,8 @@
 
 .rem-container.rem-container--forwards-practice-disabled.rem-container--backwards-practice-disabled
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after {
-  content: "⇏";
+  content: var(--disabled-practice-icon, "⇏");
   font-size: 15px;
-  color: orangered;
-  margin-left: 3px;
-}
-
-/* warn on back questions */
-.rem-container--question-rem-type.rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
-  .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
-.rem-container--question-rem-type.rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
-  .MultiLineCardIndicator::after {
-  content: "!⇐!";
-  font-size: 15px;
-  color: red;
-  margin-left: 3px;
-}
-
-.rem-container--question-rem-type.rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
-  .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
-.rem-container--question-rem-type.rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
-  .MultiLineCardIndicator::after {
-  content: "!⇔!";
-  font-size: 15px;
-  color: red;
+  color: var(--disabled-practice-color, orangered);
   margin-left: 3px;
 }

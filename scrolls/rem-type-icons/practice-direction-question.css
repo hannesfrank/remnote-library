@@ -1,0 +1,20 @@
+/* warn on back questions */
+.rem-container--question-rem-type.rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
+  .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
+.rem-container--question-rem-type.rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
+  .MultiLineCardIndicator::after {
+  content: var(--question-backward-practice-icon, "!⇐!");
+  font-size: 15px;
+  color: var(--question-backward-practice-color, red);
+  margin-left: 3px;
+}
+
+.rem-container--question-rem-type.rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
+  .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
+.rem-container--question-rem-type.rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
+  .MultiLineCardIndicator::after {
+  content: var(--question-both-practice-icon, "!⇔!");
+  font-size: 15px;
+  color: var(--question-both-practice-color, red);
+  margin-left: 3px;
+}
