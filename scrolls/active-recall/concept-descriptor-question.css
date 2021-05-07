@@ -19,6 +19,7 @@
   .EditorContainer
   > span.RichTextViewer
   #code-node {
+  color: transparent;
   background: white;
   filter: var(--hide-answer-filter);
 }
