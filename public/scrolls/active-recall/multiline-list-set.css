@@ -10,6 +10,7 @@
   .tree-node-container--forwards-practice-enabled.tree-node-container--set-card-type
   > .TreeNode--list
   > .tree-node-container:not(:focus-within):not(:hover):not([data-rem-container-tags~="learned"]) {
+  color: transparent;
   background: white;
   filter: var(--hide-answer-filter);
 }

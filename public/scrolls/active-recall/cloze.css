@@ -2,6 +2,7 @@
   .tree-node-container:not(.rem-container--focused):not(:hover):not([data-rem-container-tags~="learned"])
   > div:first-child
   .cloze {
+  color: transparent;
   background-color: white;
   filter: var(--hide-answer-filter);
 }
