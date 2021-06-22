@@ -1,11 +1,11 @@
 :root {
   /* Practice direction */
-  --forward-practice-icon: "⇔";
-  --forward-practice-color: goldenrod;
-  --backward-practice-icon: "⇒";
-  --backward-practice-color: green;
-  --both-practice-icon: "⇐";
-  --both-practice-color: blue;
+  --both-practice-icon: "⇔";
+  --both-practice-color: goldenrod;
+  --forward-practice-icon: "⇒";
+  --forward-practice-color: green;
+  --backward-practice-icon: "⇐";
+  --backward-practice-color: blue;
   --disabled-practice-icon: "⇏";
   --disabled-practice-color: tomato;
 

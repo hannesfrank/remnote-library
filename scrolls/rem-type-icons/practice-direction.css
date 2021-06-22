@@ -13,9 +13,9 @@
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
 .rem-container--forwards-practice-enabled.rem-container--backwards-practice-enabled
   .MultiLineCardIndicator::after {
-  content: var(--forward-practice-icon, "⇔");
+  content: var(--both-practice-icon, "⇔");
   font-size: 15px;
-  color: var(--forward-practice-color, goldenrod);
+  color: var(--both-practice-color, goldenrod);
   margin-left: 3px;
 }
 
@@ -23,9 +23,9 @@
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
 .rem-container--forwards-practice-enabled.rem-container--backwards-practice-disabled
   .MultiLineCardIndicator::after {
-  content: var(--backward-practice-icon, "⇒");
+  content: var(--forward-practice-icon, "⇒");
   font-size: 15px;
-  color: var(--backward-practice-color, green);
+  color: var(--forward-practice-color, green);
   margin-left: 3px;
 }
 
@@ -33,9 +33,9 @@
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after,
 .rem-container--forwards-practice-disabled.rem-container--backwards-practice-enabled
   .MultiLineCardIndicator::after {
-  content: var(--both-practice-icon, "⇐");
+  content: var(--backward-practice-icon, "⇐");
   font-size: 15px;
-  color: var(--both-practice-color, blue);
+  color: var(--backward-practice-color, blue);
   margin-left: 3px;
 }
 
@@ -58,6 +58,6 @@
   .separator-symbol:not(.concept_rem_type):not(.descriptor_rem_type):not(.question_rem_type)::after {
   content: var(--disabled-practice-icon, "⇏");
   font-size: 15px;
-  color: var(--disabled-practice-color, orangered);
+  color: var(--disabled-practice-color, tomato);
   margin-left: 3px;
 }
